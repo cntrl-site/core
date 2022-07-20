@@ -1,0 +1,11 @@
+{
+  "name": "@cntrl-site/core",
+  "version": "0.0.1",
+  "description": "CNTRL Core",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "arsen@momdesign.nyc",
+  "license": "MIT"
+}
