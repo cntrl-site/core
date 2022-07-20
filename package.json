@@ -4,8 +4,26 @@
   "description": "CNTRL Core",
   "main": "lib/index.js",
   "scripts": {
-    "test": "jest"
+    "prebuild": "rm -rf ./lib",
+    "build": "tsc --project tsconfig.build.json",
+    "prepublishOnly": "NODE_ENV=production npm run build"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cntrl-site/core.git"
+  },
+  "bugs": {
+    "url": "https://github.com/cntrl-site/core/issues"
+  },
+  "homepage": "https://github.com/cntrl-site/core#readme",
   "author": "arsen@momdesign.nyc",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "@tsconfig/node16": "^1.0.3",
+    "@tsconfig/recommended": "^1.0.1",
+    "typescript": "^4.7.4"
+  },
+  "dependencies": {
+    "zod": "^3.17.9"
+  }
 }
