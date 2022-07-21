@@ -7,7 +7,7 @@ export const Link = z.object({
 });
 
 const CommonParamsBase = z.object({
-  sizing: z.string().min(1),
+  sizing: z.string().min(1)
 });
 
 export const ItemBaseSchema = z.object({
