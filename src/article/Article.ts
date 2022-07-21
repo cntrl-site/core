@@ -1,5 +1,5 @@
-import { ArticleItemType } from '../enums/ArticleItemType';
-import { TextAlign } from '../enums/TextAlign';
+import { ArticleItemType } from './ArticleItemType';
+import { TextAlign } from './TextAlign';
 import { RichTextBlock, RichTextStyle } from './RichText';
 
 export interface Article {

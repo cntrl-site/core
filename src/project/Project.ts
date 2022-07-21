@@ -1,8 +1,8 @@
 import { AdditionalHTML } from './AdditionalHTML';
-import { Meta } from './MetaInfo';
-import { Grid } from './Grid';
-import { Layout } from './Layout';
-import { Page } from './Page';
+import { Meta } from '../metaInfo/MetaInfo';
+import { Grid } from '../grid/Grid';
+import { Layout } from '../layout/Layout';
+import { Page } from '../page/Page';
 import { Fonts } from './Fonts';
 
 export interface Project {

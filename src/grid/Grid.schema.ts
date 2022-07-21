@@ -1,5 +1,5 @@
 import { z } from 'zod';
-import { LayoutGrid } from '../types/Grid';
+import { LayoutGrid } from './Grid';
 
 export const GridSchema = z.object({
   color: z.string().min(1)

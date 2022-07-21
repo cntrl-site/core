@@ -1,10 +1,10 @@
-import { ItemBase } from './ItemBase';
 import { z } from 'zod';
-import { ArticleItemType } from '../enums/ArticleItemType';
-import { TextAlign } from '../enums/TextAlign';
-import { RichTextItem } from './RichTextItem';
+import { ItemBaseSchema } from './ItemBase.schema';
+import { ArticleItemType } from './ArticleItemType';
+import { TextAlign } from './TextAlign';
+import { RichTextItemSchema } from './RichTextItem.schema';
 
-const ImageItem = ItemBase.extend({
+const ImageItem = ItemBaseSchema.extend({
   type: z.literal(ArticleItemType.Image),
   commonParams: z.object({
     url: z.string().min(1),
@@ -22,7 +22,7 @@ const ImageItem = ItemBase.extend({
   )
 });
 
-const VideoItem = ItemBase.extend({
+const VideoItem = ItemBaseSchema.extend({
   type: z.literal(ArticleItemType.Video),
   commonParams: z.object({
     url: z.string().min(1),
@@ -41,7 +41,7 @@ const VideoItem = ItemBase.extend({
   )
 });
 
-const TextItem = ItemBase.extend({
+const TextItem = ItemBaseSchema.extend({
   type: z.literal(ArticleItemType.Text),
   commonParams: z.object({
     sizing: z.string().min(1),
@@ -62,7 +62,7 @@ const TextItem = ItemBase.extend({
   )
 });
 
-const RectangleItem = ItemBase.extend({
+const RectangleItem = ItemBaseSchema.extend({
   type: z.literal(ArticleItemType.Rectangle),
   layoutParams: z.record(
     z.object({
@@ -80,5 +80,5 @@ export const Item = z.discriminatedUnion('type', [
   VideoItem,
   RectangleItem,
   TextItem,
-  RichTextItem
+  RichTextItemSchema
 ]);

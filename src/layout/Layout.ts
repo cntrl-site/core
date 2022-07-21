@@ -1,4 +1,4 @@
-import { LayoutGrid } from './Grid';
+import { LayoutGrid } from '../grid/Grid';
 
 export interface Layout {
   title: string;

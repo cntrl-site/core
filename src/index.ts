@@ -1,6 +1,6 @@
 // Enums
-export { ArticleItemType } from './enums/ArticleItemType';
-export { TextAlign } from './enums/TextAlign';
+export { ArticleItemType } from './article/ArticleItemType';
+export { TextAlign } from './article/TextAlign';
 
 // Types
 export type {
@@ -13,19 +13,19 @@ export type {
   TextItem as TTextItem,
   RichTextItem as TRichTextItem,
   ItemArea as TArticleItemArea
-} from './types/Article';
-export type { LayoutGrid as TLayoutGrid, Grid as TGrid } from './types/Grid';
-export type { Layout as TLayout } from './types/Layout';
-export type { AdditionalHTML as TAdditionalHTML } from './types/AdditionalHTML';
-export type { Fonts as TFonts } from './types/Fonts';
-export type { Meta as TMeta, PageMeta as TPageMeta } from './types/MetaInfo';
-export type { Page as TPage } from './types/Page';
-export type { Project as TProject } from './types/Project';
+} from './article/Article';
+export type { LayoutGrid as TLayoutGrid, Grid as TGrid } from './grid/Grid';
+export type { Layout as TLayout } from './layout/Layout';
+export type { AdditionalHTML as TAdditionalHTML } from './project/AdditionalHTML';
+export type { Fonts as TFonts } from './project/Fonts';
+export type { Meta as TMeta, PageMeta as TPageMeta } from './metaInfo/MetaInfo';
+export type { Page as TPage } from './page/Page';
+export type { Project as TProject } from './project/Project';
 export type { RichText } from './RichText';
 
 // Schemas
-export { ArticleSchema } from './schemas/Article';
-export { ProjectSchema } from './schemas/Project';
-export { LayoutSchema } from './schemas/Layout';
-export { GridSchema, LayoutGridSchema } from './schemas/Grid';
-export { PageSchema } from './schemas/Page';
+export { ArticleSchema } from './article/Article.schema';
+export { ProjectSchema } from './project/Project.schema';
+export { LayoutSchema } from './layout/Layout.schema';
+export { GridSchema, LayoutGridSchema } from './grid/Grid.schema';
+export { PageSchema } from './page/Page.schema';

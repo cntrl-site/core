@@ -1,6 +1,6 @@
 import { z } from 'zod';
-import { Page } from '../types/Page';
-import { PageMetaSchema } from './MetaInfo';
+import { Page } from './Page';
+import { PageMetaSchema } from '../metaInfo/MetaInfo.schema';
 
 export const PageSchema: z.Schema<Page> = z.object({
   title: z.string(),

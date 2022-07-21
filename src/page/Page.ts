@@ -1,4 +1,4 @@
-import { PageMeta } from './MetaInfo';
+import { PageMeta } from '../metaInfo/MetaInfo';
 
 export interface Page {
   id: string;

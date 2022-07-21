@@ -10,7 +10,7 @@ const CommonParamsBase = z.object({
   sizing: z.string().min(1),
 });
 
-export const ItemBase = z.object({
+export const ItemBaseSchema = z.object({
   id: z.string().min(1),
   area: z.record(ItemArea),
   visible: z.record(z.boolean()),

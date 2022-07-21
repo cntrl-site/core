@@ -1,8 +1,8 @@
 import { Schema, z } from 'zod';
-import { ArticleItemType } from '../enums/ArticleItemType';
-import { RichTextBlock as TRichTextBlock } from '../types/RichText';
-import { ItemBase } from './ItemBase';
-import { TextAlign } from '../enums/TextAlign';
+import { ArticleItemType } from './ArticleItemType';
+import { RichTextBlock as TRichTextBlock } from './RichText';
+import { ItemBaseSchema } from './ItemBase.schema';
+import { TextAlign } from './TextAlign';
 
 const RichTextEntity = z.object({
   start: z.number().nonnegative(),
@@ -29,7 +29,7 @@ const RichTextBlock: Schema<TRichTextBlock> = z.lazy(() => (
   })
 ));
 
-export const RichTextItem = ItemBase.extend({
+export const RichTextItemSchema = ItemBaseSchema.extend({
   type: z.literal(ArticleItemType.RichText),
   commonParams: z.object({
     sizing: z.string(),
