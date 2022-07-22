@@ -53,8 +53,9 @@ interface ItemBase {
 
 export interface ImageItem extends ItemBase {
   type: ArticleItemType.Image;
-  commonParams: CommonParamsBase & {
+  commonParams: {
     url: string;
+    sizing: string;
   };
   layoutParams: Record<
     Layout,
