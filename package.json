@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "description": "CNTRL Core",
   "main": "lib/index.js",
+  "types": "src/index.ts",
   "scripts": {
     "prebuild": "rm -rf ./lib",
     "build": "tsc --project tsconfig.build.json",
