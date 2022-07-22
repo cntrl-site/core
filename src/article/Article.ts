@@ -37,17 +37,13 @@ interface Link {
   target: string;
 }
 
-interface CommonParamsBase {
-  sizing: string;
-}
-
 export interface ItemBase {
   id: string;
   area: Record<Layout, ItemArea>;
   visible: Record<Layout, boolean>;
   type: ArticleItemType;
   link?: Link;
-  commonParams: CommonParamsBase;
+  commonParams: any;
   layoutParams?: Record<Layout, any>;
 }
 
