@@ -41,7 +41,7 @@ interface CommonParamsBase {
   sizing: string;
 }
 
-interface ItemBase {
+export interface ItemBase {
   id: string;
   area: Record<Layout, ItemArea>;
   visible: Record<Layout, boolean>;

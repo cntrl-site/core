@@ -12,7 +12,8 @@ export type {
   VideoItem as TVideoItem,
   TextItem as TTextItem,
   RichTextItem as TRichTextItem,
-  ItemArea as TArticleItemArea
+  ItemArea as TArticleItemArea,
+  ItemBase as TArticleItemBase
 } from './article/Article';
 export type { LayoutGrid as TLayoutGrid, Grid as TGrid } from './grid/Grid';
 export type { Layout as TLayout } from './layout/Layout';
