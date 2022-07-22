@@ -11,7 +11,7 @@ export interface Section {
   id: string;
   height: Record<Layout, number>;
   visible: Record<Layout, boolean>;
-  items: Item[];
+  items: ItemBase[];
 }
 
 export type Item =
