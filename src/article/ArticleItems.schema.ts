@@ -1,7 +1,6 @@
 import { z } from 'zod';
 import { ItemBaseSchema } from './ItemBase.schema';
 import { ArticleItemType } from './ArticleItemType';
-import { TextAlign } from './TextAlign';
 import { RichTextItemSchema } from './RichTextItem.schema';
 
 const ImageItem = ItemBaseSchema.extend({
@@ -41,27 +40,6 @@ const VideoItem = ItemBaseSchema.extend({
   )
 });
 
-const TextItem = ItemBaseSchema.extend({
-  type: z.literal(ArticleItemType.Text),
-  commonParams: z.object({
-    sizing: z.string().min(1),
-    content: z.string(),
-    fontFamily: z.string().min(1),
-    fontStyle: z.string().min(1)
-  }),
-  layoutParams: z.record(
-    z.object({
-      align: z.nativeEnum(TextAlign),
-      fontSize: z.number(),
-      letterSpacing: z.number(),
-      lineHeight: z.number(),
-      opacity: z.number().nonnegative(),
-      textColor: z.string().min(1),
-      wordSpacing: z.number()
-    })
-  )
-});
-
 const RectangleItem = ItemBaseSchema.extend({
   type: z.literal(ArticleItemType.Rectangle),
   layoutParams: z.record(
@@ -79,6 +57,5 @@ export const Item = z.discriminatedUnion('type', [
   ImageItem,
   VideoItem,
   RectangleItem,
-  TextItem,
   RichTextItemSchema
 ]);
