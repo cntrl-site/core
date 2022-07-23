@@ -51,6 +51,7 @@ export interface ImageItem extends ItemBase {
   commonParams: {
     url: string;
     sizing: string;
+    ratioLock: boolean;
   };
   layoutParams: Record<
     Layout,
@@ -101,6 +102,10 @@ export interface RichTextItem extends ItemBase {
 
 export interface RectangleItem extends ItemBase {
   type: ArticleItemType.Rectangle;
+  commonParams: {
+    sizing: string;
+    ratioLock: boolean;
+  };
   layoutParams: Record<
     Layout,
     {
