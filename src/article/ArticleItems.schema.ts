@@ -42,6 +42,10 @@ const VideoItem = ItemBaseSchema.extend({
 
 const RectangleItem = ItemBaseSchema.extend({
   type: z.literal(ArticleItemType.Rectangle),
+  commonParams: z.object({
+    sizing: z.string().min(1),
+    ratioLock: z.boolean()
+  }),
   layoutParams: z.record(
     z.object({
       radius: z.number(),
