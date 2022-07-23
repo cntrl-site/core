@@ -10,7 +10,6 @@ export type {
   RectangleItem as TRectangleItem,
   ImageItem as TImageItem,
   VideoItem as TVideoItem,
-  TextItem as TTextItem,
   RichTextItem as TRichTextItem,
   ItemArea as TArticleItemArea,
   ItemBase as TArticleItemBase
