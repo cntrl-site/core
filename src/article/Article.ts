@@ -17,7 +17,6 @@ export interface Section {
 export type Item =
   | ImageItem
   | VideoItem
-  | TextItem
   | RichTextItem
   | RectangleItem;
 
@@ -81,28 +80,6 @@ export interface VideoItem extends ItemBase {
       opacity: number;
       strokeWidth: number;
       strokeColor: string;
-    }
-    >;
-}
-
-export interface TextItem extends ItemBase {
-  type: ArticleItemType.Text;
-  commonParams: {
-    sizing: string;
-    content: string;
-    fontFamily: string;
-    fontStyle: string;
-  };
-  layoutParams: Record<
-    Layout,
-    {
-      align: TextAlign;
-      fontSize: number;
-      letterSpacing: number;
-      lineHeight: number;
-      opacity: number;
-      textColor: string;
-      wordSpacing: number;
     }
     >;
 }
