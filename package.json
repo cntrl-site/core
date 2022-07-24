@@ -26,5 +26,8 @@
   },
   "dependencies": {
     "zod": "^3.17.9"
+  },
+  "directories": {
+    "lib": "lib"
   }
 }
