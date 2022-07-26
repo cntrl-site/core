@@ -26,6 +26,7 @@ export type { Meta as TMeta, PageMeta as TPageMeta } from './metaInfo/MetaInfo';
 export type { Page as TPage } from './page/Page';
 export type { Project as TProject } from './project/Project';
 export type { RichText } from './RichText';
+export type { ItemArea as TArticleItemArea } from './article/ItemArea';
 
 // Schemas
 export { ArticleSchema } from './article/Article.schema';
@@ -33,4 +34,3 @@ export { ProjectSchema } from './project/Project.schema';
 export { LayoutSchema } from './layout/Layout.schema';
 export { GridSchema, LayoutGridSchema } from './grid/Grid.schema';
 export { PageSchema } from './page/Page.schema';
-export { ItemArea as TArticleItemArea } from './article/ItemArea';
