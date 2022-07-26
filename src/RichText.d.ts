@@ -2,7 +2,7 @@ import type {
   RichTextBlock,
   RichTextEntity,
   RichTextStyle
-} from './types/RichText';
+} from './article/RichText';
 
 export namespace RichText {
   export type Block = RichTextBlock;
