@@ -12,7 +12,7 @@ export interface Item<T extends ArticleItemType> {
   visible: Record<LayoutIdentifier, boolean>;
   link?: Link;
   commonParams: ItemCommonParamsMap[T];
-  layoutParams: Record<LayoutIdentifier, any>;
+  layoutParams: Record<LayoutIdentifier, ItemLayoutParamsMap[T]>;
 }
 
 export interface ItemCommonParamsMap {
