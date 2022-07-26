@@ -1,5 +1,5 @@
 import { z } from 'zod';
-import { ItemArea } from './ItemArea';
+import { ItemAreaSchema } from './ItemArea.schema';
 
 export const Link = z.object({
   url: z.string().url(),
@@ -12,7 +12,7 @@ const CommonParamsBase = z.object({
 
 export const ItemBaseSchema = z.object({
   id: z.string().min(1),
-  area: z.record(ItemArea),
+  area: z.record(ItemAreaSchema),
   visible: z.record(z.boolean()),
   link: Link.optional(),
   commonParams: CommonParamsBase,
