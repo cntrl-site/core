@@ -5,15 +5,19 @@ export { TextAlign } from './article/TextAlign';
 // Types
 export type {
   Article as TArticle,
-  Section as TArticleSection,
+  Section as TArticleSection
+} from './article/Article';
+export type {
   Item as TArticleItem,
+  ItemAny as TArticleItemAny,
   RectangleItem as TRectangleItem,
   ImageItem as TImageItem,
   VideoItem as TVideoItem,
   RichTextItem as TRichTextItem,
-  ItemArea as TArticleItemArea,
-  ItemBase as TArticleItemBase
-} from './article/Article';
+  ItemCommonParamsMap as TItemCommonParamsMap,
+  ItemLayoutParamsMap as TItemLayoutParamsMap
+} from './article/ArticleItems';
+export { isItemType } from './article/ArticleItems';
 export type { LayoutGrid as TLayoutGrid, Grid as TGrid } from './grid/Grid';
 export type { Layout as TLayout } from './layout/Layout';
 export type { AdditionalHTML as TAdditionalHTML } from './project/AdditionalHTML';
@@ -29,3 +33,4 @@ export { ProjectSchema } from './project/Project.schema';
 export { LayoutSchema } from './layout/Layout.schema';
 export { GridSchema, LayoutGridSchema } from './grid/Grid.schema';
 export { PageSchema } from './page/Page.schema';
+export { ItemArea as TArticleItemArea } from './article/ItemArea';
