@@ -1,6 +1,7 @@
 // Enums
-export { ArticleItemType } from './article/ArticleItemType';
-export { TextAlign } from './article/TextAlign';
+export { ArticleItemType } from './article/enums/ArticleItemType';
+export { TextAlign } from './article/enums/TextAlign';
+export { ArticleItemSizingType } from './article/enums/Sizing';
 
 // Types
 export type {
@@ -34,3 +35,6 @@ export { ProjectSchema } from './project/Project.schema';
 export { LayoutSchema } from './layout/Layout.schema';
 export { GridSchema, LayoutGridSchema } from './grid/Grid.schema';
 export { PageSchema } from './page/Page.schema';
+
+// Utils
+export { getClosestLayoutValue, getLayoutMediaQuery } from './article/utils/layouts';

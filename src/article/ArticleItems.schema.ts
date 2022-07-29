@@ -1,6 +1,6 @@
 import { z } from 'zod';
 import { ItemBaseSchema } from './ItemBase.schema';
-import { ArticleItemType } from './ArticleItemType';
+import { ArticleItemType } from './enums/ArticleItemType';
 import { RichTextItemSchema } from './RichTextItem.schema';
 
 const ImageItem = ItemBaseSchema.extend({

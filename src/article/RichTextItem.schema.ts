@@ -1,8 +1,8 @@
 import { Schema, z } from 'zod';
-import { ArticleItemType } from './ArticleItemType';
+import { ArticleItemType } from './enums/ArticleItemType';
 import { RichTextBlock as TRichTextBlock } from './RichText';
 import { ItemBaseSchema } from './ItemBase.schema';
-import { TextAlign } from './TextAlign';
+import { TextAlign } from './enums/TextAlign';
 
 const RichTextEntity = z.object({
   start: z.number().nonnegative(),
