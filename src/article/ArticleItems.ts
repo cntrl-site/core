@@ -1,7 +1,7 @@
-import { ArticleItemType } from './ArticleItemType';
+import { ArticleItemType } from './enums/ArticleItemType';
 import { ItemArea } from './ItemArea';
 import { RichTextBlock, RichTextStyle } from './RichText';
-import { TextAlign } from './TextAlign';
+import { TextAlign } from './enums/TextAlign';
 
 export type ItemAny = Item<ArticleItemType>;
 
