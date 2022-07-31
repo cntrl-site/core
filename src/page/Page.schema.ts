@@ -2,7 +2,7 @@ import { z } from 'zod';
 import { Page } from './Page';
 import { PageMetaSchema } from '../metaInfo/MetaInfo.schema';
 
-export const PageSchema: z.Schema<Page> = z.object({
+export const PageSchema = z.object({
   title: z.string(),
   articleId: z.string().min(1),
   slug: z.string(),

@@ -1,8 +1,8 @@
 import { z } from 'zod';
-import { Layout } from '../layout/Layout';
+import { Layout } from './Layout';
 import { LayoutGridSchema } from '../grid/Grid.schema';
 
-export const LayoutSchema: z.Schema<Layout> = z.object({
+export const LayoutSchema = z.object({
   id: z.string(),
   title: z.string(),
   icon: z.string(),
