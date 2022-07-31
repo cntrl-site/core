@@ -2,6 +2,8 @@
 export { ArticleItemType } from './article/enums/ArticleItemType';
 export { TextAlign } from './article/enums/TextAlign';
 export { ArticleItemSizingType } from './article/enums/Sizing';
+export { VerticalAlign } from './article/enums/VerticalAlign';
+export { TextTransform } from './article/enums/TextTransform';
 
 // Types
 export type {
