@@ -10,5 +10,6 @@ const Section = z.object({
 
 export const ArticleSchema = z.object({
   id: z.string().min(1),
-  sections: z.array(Section)
+  sections: z.array(Section),
+  height: z.record(z.number().positive()),
 });
