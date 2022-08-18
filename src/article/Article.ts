@@ -3,6 +3,7 @@ import { ItemAny } from './ArticleItems';
 export interface Article {
   id: string;
   sections: Section[];
+  height: Record<LayoutIdentifier, number>;
 }
 
 export interface Section {
