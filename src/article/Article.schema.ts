@@ -4,7 +4,7 @@ import { Item } from './ArticleItems.schema';
 const Section = z.object({
   id: z.string().min(1),
   items: z.array(Item),
-  height: z.record(z.number().positive()),
+  height: z.record(z.number().nonnegative()),
   visible: z.record(z.boolean())
 });
 
