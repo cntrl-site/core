@@ -2,7 +2,7 @@ import { z } from 'zod';
 import { ItemAreaSchema } from './ItemArea.schema';
 
 export const Link = z.object({
-  url: z.string().url(),
+  url: z.string().min(1),
   target: z.string().min(1)
 });
 
