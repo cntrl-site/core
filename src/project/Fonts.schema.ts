@@ -1,5 +1,5 @@
 import { z } from 'zod';
-import { CustomFontTypes } from './Fonts';
+import { FontFileTypes } from './enums/FontFileTypes';
 
 const CustomFont = z.object({
   name: z.string().min(1),
@@ -7,7 +7,7 @@ const CustomFont = z.object({
   weight: z.number(),
   files: z.array(
     z.object({
-      type: z.nativeEnum(CustomFontTypes),
+      type: z.nativeEnum(FontFileTypes),
       url: z.string().url()
     })
   )

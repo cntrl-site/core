@@ -1,13 +1,7 @@
-export enum CustomFontTypes {
-  OTF = 'otf',
-  TTF = 'ttf',
-  WOFF = 'woff',
-  WOFF2 = 'woff2',
-  EOT = 'eot'
-}
+import { FontFileTypes } from './enums/FontFileTypes';
 
 export interface CustomFontFile {
-  type: CustomFontTypes;
+  type: FontFileTypes;
   url: string;
 }
 
