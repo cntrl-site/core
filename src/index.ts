@@ -24,7 +24,7 @@ export { isItemType } from './article/ArticleItems';
 export type { LayoutGrid as TLayoutGrid, Grid as TGrid } from './grid/Grid';
 export type { Layout as TLayout } from './layout/Layout';
 export type { AdditionalHTML as TAdditionalHTML } from './project/AdditionalHTML';
-export type { Fonts as TFonts, CustomFont as TCustomFont, CustomFontTypes as TCustomFontTypes } from './project/Fonts';
+export type { Fonts as TFonts, CustomFont as TCustomFont, CustomFontTypes } from './project/Fonts';
 export type { Meta as TMeta, PageMeta as TPageMeta } from './metaInfo/MetaInfo';
 export type { Page as TPage } from './page/Page';
 export type { Project as TProject } from './project/Project';
