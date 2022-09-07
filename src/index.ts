@@ -35,6 +35,7 @@ export type { ItemArea as TArticleItemArea } from './article/ItemArea';
 // Schemas
 export { ArticleSchema } from './article/Article.schema';
 export { ProjectSchema } from './project/Project.schema';
+export { CustomFont } from './project/Fonts.schema';
 export { LayoutSchema } from './layout/Layout.schema';
 export { GridSchema, LayoutGridSchema } from './grid/Grid.schema';
 export { PageSchema } from './page/Page.schema';

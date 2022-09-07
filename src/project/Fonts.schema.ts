@@ -1,10 +1,11 @@
 import { z } from 'zod';
 import { FontFileTypes } from './enums/FontFileTypes';
 
-const CustomFont = z.object({
+export const CustomFont = z.object({
   name: z.string().min(1),
   style: z.string().min(1),
   weight: z.number(),
+  readonly: z.boolean(),
   files: z.array(
     z.object({
       type: z.nativeEnum(FontFileTypes),
