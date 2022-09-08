@@ -6,7 +6,7 @@ export const CustomFont = z.object({
   style: z.string().min(1),
   weight: z.number(),
   readonly: z.boolean(),
-  weightLabel: z.boolean().optional(),
+  weightLabel: z.string().optional(),
   files: z.array(
     z.object({
       type: z.nativeEnum(FontFileTypes),
