@@ -7,6 +7,5 @@ export const PageSchema = z.object({
   slug: z.string(),
   isPublished: z.boolean(),
   meta: PageMetaSchema.optional(),
-  enableMeta: z.boolean(),
   id: z.string().min(1)
 });
