@@ -1,13 +1,16 @@
 import { z } from 'zod';
 
-export const PageMetaSchema = z.object({
-  enabled: z.boolean(),
+const GenericMetaSchema = z.object({
   title: z.string().optional(),
   description: z.string().optional(),
   opengraphThumbnail: z.string().optional(),
   keywords: z.string().optional()
 });
 
-export const MetaSchema = PageMetaSchema.extend({
+export const PageMetaSchema = GenericMetaSchema.extend({
+  enabled: z.boolean()
+})
+
+export const MetaSchema = GenericMetaSchema.extend({
   favicon: z.string().optional()
 });
