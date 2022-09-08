@@ -1,5 +1,4 @@
 import { z } from 'zod';
-import { Page } from './Page';
 import { PageMetaSchema } from '../metaInfo/MetaInfo.schema';
 
 export const PageSchema = z.object({
@@ -8,5 +7,6 @@ export const PageSchema = z.object({
   slug: z.string(),
   isPublished: z.boolean(),
   meta: PageMetaSchema.optional(),
+  enableMeta: z.boolean(),
   id: z.string().min(1)
 });

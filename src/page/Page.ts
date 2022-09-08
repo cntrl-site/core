@@ -7,4 +7,5 @@ export interface Page {
   slug: string;
   isPublished: boolean;
   meta?: PageMeta;
+  enableMeta: boolean;
 }
