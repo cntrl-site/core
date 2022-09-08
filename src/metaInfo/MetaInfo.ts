@@ -3,6 +3,7 @@ export interface Meta extends PageMeta {
 }
 
 export interface PageMeta {
+  enabled: boolean;
   title?: string;
   description?: string;
   opengraphThumbnail?: string;
