@@ -9,6 +9,7 @@ export interface CustomFont {
   name: string;
   style: string;
   weight: number;
+  weightLabel?: string;
   readonly: boolean;
   files: CustomFontFile[];
 }
