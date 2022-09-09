@@ -3,7 +3,7 @@ export interface Meta extends GenericMeta {
 }
 
 export interface PageMeta extends GenericMeta {
-  enabled: boolean;
+  enabled?: boolean;
 }
 
 interface GenericMeta {
