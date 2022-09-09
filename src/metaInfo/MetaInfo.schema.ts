@@ -8,7 +8,7 @@ const GenericMetaSchema = z.object({
 });
 
 export const PageMetaSchema = GenericMetaSchema.extend({
-  enabled: z.boolean()
+  enabled: z.boolean().optional()
 })
 
 export const MetaSchema = GenericMetaSchema.extend({
