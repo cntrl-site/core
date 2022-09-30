@@ -5,6 +5,7 @@ const Section = z.object({
   id: z.string().min(1),
   items: z.array(Item),
   height: z.record(z.number().nonnegative()),
+  position: z.record(z.number()),
   visible: z.record(z.boolean())
 });
 
