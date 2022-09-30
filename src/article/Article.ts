@@ -11,6 +11,7 @@ export interface Section {
   height: Record<LayoutIdentifier, number>;
   visible: Record<LayoutIdentifier, boolean>;
   items: ItemAny[];
+  position: Record<LayoutIdentifier, number>;
 }
 
 type LayoutIdentifier = string;
