@@ -6,7 +6,7 @@ const Section = z.object({
   items: z.array(Item),
   height: z.record(z.number().nonnegative()),
   position: z.record(z.number()),
-  visible: z.record(z.boolean())
+  hidden: z.record(z.boolean())
 });
 
 export const ArticleSchema = z.object({
