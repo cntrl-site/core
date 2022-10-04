@@ -9,7 +9,7 @@ export interface Article {
 export interface Section {
   id: string;
   height: Record<LayoutIdentifier, number>;
-  visible: Record<LayoutIdentifier, boolean>;
+  hidden: Record<LayoutIdentifier, boolean>;
   items: ItemAny[];
   position: Record<LayoutIdentifier, number>;
 }
