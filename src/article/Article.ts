@@ -8,6 +8,7 @@ export interface Article {
 
 export interface Section {
   id: string;
+  name?: string;
   height: Record<LayoutIdentifier, number>;
   hidden: Record<LayoutIdentifier, boolean>;
   items: ItemAny[];
