@@ -2,5 +2,6 @@ export enum ArticleItemType {
   Image = 'image',
   RichText = 'richtext',
   Video = 'video',
-  Rectangle = 'rectangle'
+  Rectangle = 'rectangle',
+  VimeoEmbed = 'vimeo-embed'
 }

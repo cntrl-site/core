@@ -20,6 +20,7 @@ export interface ItemCommonParamsMap {
   [ArticleItemType.Video]: VideoCommonParams;
   [ArticleItemType.RichText]: RichTextCommonParams;
   [ArticleItemType.Rectangle]: RectangleCommonParams;
+  [ArticleItemType.VimeoEmbed]: VimeoEmbedCommonParams;
 }
 
 export interface ItemLayoutParamsMap {
@@ -27,6 +28,7 @@ export interface ItemLayoutParamsMap {
   [ArticleItemType.Video]: VideoLayoutParams;
   [ArticleItemType.RichText]: RichTextLayoutParams;
   [ArticleItemType.Rectangle]: RectangleLayoutParams;
+  [ArticleItemType.VimeoEmbed]: VimeoEmbedLayoutParams;
 }
 
 interface CommonItemCommonParams {
@@ -40,7 +42,9 @@ interface MediaCommonParams extends CommonItemCommonParams {
 
 interface VideoCommonParams extends MediaCommonParams {}
 
-interface ImageCommonParams extends MediaCommonParams {}
+interface ImageCommonParams extends MediaCommonParams { }
+
+interface VimeoEmbedLayoutParams {}
 
 interface RichTextCommonParams extends CommonItemCommonParams {
   sizing: string;
@@ -51,6 +55,14 @@ interface RichTextCommonParams extends CommonItemCommonParams {
 
 interface RectangleCommonParams extends CommonItemCommonParams {
   ratioLock: boolean;
+}
+
+interface VimeoEmbedCommonParams extends CommonItemCommonParams {
+  autoplay: boolean;
+  controls: boolean;
+  loop: boolean;
+  muted: boolean;
+  pictureInPicture: boolean;
 }
 
 interface MediaLayoutParams {

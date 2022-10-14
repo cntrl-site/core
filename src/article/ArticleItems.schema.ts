@@ -57,9 +57,22 @@ const RectangleItem = ItemBaseSchema.extend({
   )
 });
 
+const VimeoEmbed = ItemBaseSchema.extend({
+  type: z.literal(ArticleItemType.VimeoEmbed),
+  commonParams: z.object({
+    autoplay: z.boolean(),
+    controls: z.boolean(),
+    loop: z.boolean(),
+    muted: z.boolean(),
+    pictureInPicture: z.boolean()
+  })
+})
+
+
 export const Item = z.discriminatedUnion('type', [
   ImageItem,
   VideoItem,
   RectangleItem,
-  RichTextItemSchema
+  RichTextItemSchema,
+  VimeoEmbed
 ]);
