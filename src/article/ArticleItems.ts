@@ -42,9 +42,12 @@ interface MediaCommonParams extends CommonItemCommonParams {
 
 interface VideoCommonParams extends MediaCommonParams {}
 
-interface ImageCommonParams extends MediaCommonParams { }
+interface ImageCommonParams extends MediaCommonParams {}
 
-interface VimeoEmbedLayoutParams {}
+interface VimeoEmbedLayoutParams {
+  strokeWidth: number;
+  strokeColor: string;
+}
 
 interface RichTextCommonParams extends CommonItemCommonParams {
   sizing: string;
@@ -105,6 +108,7 @@ export type VideoItem = Item<ArticleItemType.Video>;
 export type RectangleItem = Item<ArticleItemType.Rectangle>;
 export type ImageItem = Item<ArticleItemType.Image>;
 export type RichTextItem = Item<ArticleItemType.RichText>;
+export type VimeoEmbedItem = Item<ArticleItemType.VimeoEmbed>;
 
 export function isItemType<T extends ArticleItemType>(item: ItemAny, itemType: T): item is Item<T> {
   return item.type === itemType;
