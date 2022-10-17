@@ -7,7 +7,8 @@ const Section = z.object({
   name: z.string().optional(),
   height: z.record(z.number().nonnegative()),
   position: z.record(z.number()),
-  hidden: z.record(z.boolean())
+  hidden: z.record(z.boolean()),
+  color: z.record(z.string()).optional()
 });
 
 export const ArticleSchema = z.object({
