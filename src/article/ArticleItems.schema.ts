@@ -60,6 +60,7 @@ const RectangleItem = ItemBaseSchema.extend({
 const VimeoEmbed = ItemBaseSchema.extend({
   type: z.literal(ArticleItemType.VimeoEmbed),
   commonParams: z.object({
+    sizing: z.string().min(1),
     autoplay: z.boolean(),
     controls: z.boolean(),
     loop: z.boolean(),
