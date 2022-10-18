@@ -13,7 +13,7 @@ export interface Section {
   hidden: Record<LayoutIdentifier, boolean>;
   items: ItemAny[];
   position: Record<LayoutIdentifier, number>;
-  color?: Record<LayoutIdentifier, number>;
+  color?: Record<LayoutIdentifier, string>;
 }
 
 type LayoutIdentifier = string;
