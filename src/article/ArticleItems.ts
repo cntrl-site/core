@@ -20,6 +20,7 @@ export interface ItemCommonParamsMap {
   [ArticleItemType.Video]: VideoCommonParams;
   [ArticleItemType.RichText]: RichTextCommonParams;
   [ArticleItemType.Rectangle]: RectangleCommonParams;
+  [ArticleItemType.VimeoEmbed]: VimeoEmbedCommonParams;
 }
 
 export interface ItemLayoutParamsMap {
@@ -27,6 +28,7 @@ export interface ItemLayoutParamsMap {
   [ArticleItemType.Video]: VideoLayoutParams;
   [ArticleItemType.RichText]: RichTextLayoutParams;
   [ArticleItemType.Rectangle]: RectangleLayoutParams;
+  [ArticleItemType.VimeoEmbed]: VimeoEmbedLayoutParams;
 }
 
 interface CommonItemCommonParams {
@@ -42,6 +44,11 @@ interface VideoCommonParams extends MediaCommonParams {}
 
 interface ImageCommonParams extends MediaCommonParams {}
 
+interface VimeoEmbedLayoutParams {
+  strokeWidth: number;
+  strokeColor: string;
+}
+
 interface RichTextCommonParams extends CommonItemCommonParams {
   sizing: string;
   text: string;
@@ -51,6 +58,14 @@ interface RichTextCommonParams extends CommonItemCommonParams {
 
 interface RectangleCommonParams extends CommonItemCommonParams {
   ratioLock: boolean;
+}
+
+interface VimeoEmbedCommonParams extends CommonItemCommonParams {
+  autoplay: boolean;
+  controls: boolean;
+  loop: boolean;
+  muted: boolean;
+  pictureInPicture: boolean;
 }
 
 interface MediaLayoutParams {
@@ -93,6 +108,7 @@ export type VideoItem = Item<ArticleItemType.Video>;
 export type RectangleItem = Item<ArticleItemType.Rectangle>;
 export type ImageItem = Item<ArticleItemType.Image>;
 export type RichTextItem = Item<ArticleItemType.RichText>;
+export type VimeoEmbedItem = Item<ArticleItemType.VimeoEmbed>;
 
 export function isItemType<T extends ArticleItemType>(item: ItemAny, itemType: T): item is Item<T> {
   return item.type === itemType;
