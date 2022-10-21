@@ -4,7 +4,7 @@ export interface Article {
   id: string;
   sections: Section[];
   height: Record<LayoutIdentifier, number>;
-  color?: Record<LayoutIdentifier, string>;
+  color: Record<LayoutIdentifier, string | null>;
 }
 
 export interface Section {
@@ -14,7 +14,7 @@ export interface Section {
   hidden: Record<LayoutIdentifier, boolean>;
   items: ItemAny[];
   position: Record<LayoutIdentifier, number>;
-  color?: Record<LayoutIdentifier, string>;
+  color: Record<LayoutIdentifier, string | null>;
 }
 
 type LayoutIdentifier = string;
