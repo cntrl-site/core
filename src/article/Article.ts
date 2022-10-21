@@ -4,6 +4,7 @@ export interface Article {
   id: string;
   sections: Section[];
   height: Record<LayoutIdentifier, number>;
+  color?: Record<LayoutIdentifier, string>;
 }
 
 export interface Section {
