@@ -12,7 +12,6 @@ const ImageItem = ItemBaseSchema.extend({
   }),
   layoutParams: z.record(
     z.object({
-      fullwidth: z.boolean(),
       opacity: z.number().nonnegative(),
       radius: z.number(),
       strokeWidth: z.number(),
@@ -30,7 +29,6 @@ const VideoItem = ItemBaseSchema.extend({
   }),
   layoutParams: z.record(
     z.object({
-      fullwidth: z.boolean(),
       autoplay: z.boolean(),
       opacity: z.number().nonnegative(),
       radius: z.number(),
@@ -51,8 +49,7 @@ const RectangleItem = ItemBaseSchema.extend({
       radius: z.number(),
       strokeWidth: z.number(),
       fillColor: z.string().min(1),
-      strokeColor: z.string().min(1),
-      fullwidth: z.boolean()
+      strokeColor: z.string().min(1)
     })
   )
 });

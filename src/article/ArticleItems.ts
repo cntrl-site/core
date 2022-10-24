@@ -70,7 +70,6 @@ interface VimeoEmbedCommonParams extends CommonItemCommonParams {
 }
 
 interface MediaLayoutParams {
-  fullwidth: boolean;
   opacity: number;
   radius: number;
   strokeWidth: number;
@@ -94,7 +93,6 @@ interface RectangleLayoutParams {
   strokeWidth: number;
   fillColor: string;
   strokeColor: string;
-  fullwidth: boolean;
 }
 
 export interface Link {
