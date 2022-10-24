@@ -65,7 +65,8 @@ const VimeoEmbedItem = ItemBaseSchema.extend({
     controls: z.boolean(),
     loop: z.boolean(),
     muted: z.boolean(),
-    pictureInPicture: z.boolean()
+    pictureInPicture: z.boolean(),
+    url: z.string().min(1)
   }),
   layoutParams: z.record(
     z.object({
