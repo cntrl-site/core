@@ -66,6 +66,7 @@ interface VimeoEmbedCommonParams extends CommonItemCommonParams {
   loop: boolean;
   muted: boolean;
   pictureInPicture: boolean;
+  url: string;
 }
 
 interface MediaLayoutParams {
