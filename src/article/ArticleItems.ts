@@ -44,11 +44,6 @@ interface VideoCommonParams extends MediaCommonParams {}
 
 interface ImageCommonParams extends MediaCommonParams {}
 
-interface VimeoEmbedLayoutParams {
-  strokeWidth: number;
-  strokeColor: string;
-}
-
 interface RichTextCommonParams extends CommonItemCommonParams {
   sizing: string;
   text: string;
@@ -66,12 +61,19 @@ interface VimeoEmbedCommonParams extends CommonItemCommonParams {
   loop: boolean;
   muted: boolean;
   pictureInPicture: boolean;
-  url: string;
+  id: string;
+  ratioLock: boolean;
 }
 
 interface MediaLayoutParams {
   opacity: number;
   radius: number;
+  strokeWidth: number;
+  strokeColor: string;
+}
+
+interface VimeoEmbedLayoutParams {
+  radius: number,
   strokeWidth: number;
   strokeColor: string;
 }
