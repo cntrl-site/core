@@ -1,6 +1,6 @@
 import { Layout } from '../../layout/Layout';
 
-export function getClosestLayoutValue<V>(map: Record<string, V>, layouts: Layout[], layoutId: string): V {
+export function getClosestLayoutValue<V>(map: Record<string, V>, layouts: Layout[], layoutId: string): [V, LayoutId] {
   const index = layouts.findIndex(l => l.id === layoutId);
   if (index === -1) {
     throw new Error(`No layout was found by the given id #${layoutId}`);
@@ -14,7 +14,7 @@ export function getClosestLayoutValue<V>(map: Record<string, V>, layouts: Layout
   if (!found) {
     throw new Error('No layout data found');
   }
-  return map[found.id];
+  return [map[found.id], found.id];
 }
 
 export function getLayoutMediaQuery(layoutId: string, layouts: Layout[]): string {
@@ -30,3 +30,5 @@ export function getLayoutMediaQuery(layoutId: string, layouts: Layout[]): string
   }
   return `@media (min-width: ${current.startsWith}px) and (max-width: ${next.startsWith - 1}px)`;
 }
+
+type LayoutId = string;
