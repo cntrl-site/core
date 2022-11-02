@@ -61,7 +61,7 @@ interface VimeoEmbedCommonParams extends CommonItemCommonParams {
   loop: boolean;
   muted: boolean;
   pictureInPicture: boolean;
-  id: string;
+  url: string;
   ratioLock: boolean;
 }
 
@@ -73,9 +73,7 @@ interface MediaLayoutParams {
 }
 
 interface VimeoEmbedLayoutParams {
-  radius: number,
-  strokeWidth: number;
-  strokeColor: string;
+  radius: number;
 }
 
 interface ImageLayoutParams extends MediaLayoutParams {}
