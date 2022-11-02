@@ -63,14 +63,12 @@ const VimeoEmbedItem = ItemBaseSchema.extend({
     loop: z.boolean(),
     muted: z.boolean(),
     pictureInPicture: z.boolean(),
-    id: z.string().min(1),
+    url: z.string().min(1),
     ratioLock: z.boolean()
   }),
   layoutParams: z.record(
     z.object({
-      radius: z.number(),
-      strokeWidth: z.number(),
-      strokeColor: z.string().min(1),
+      radius: z.number()
     })
   )
 })
