@@ -71,7 +71,7 @@ interface YoutubeEmbedCommonParams extends CommonItemCommonParams {
   autoplay: boolean;
   controls: boolean;
   loop: boolean;
-  id: string;
+  url: string;
   ratioLock: boolean;
 }
 

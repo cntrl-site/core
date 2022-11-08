@@ -80,7 +80,7 @@ const YoutubeEmbedItem = ItemBaseSchema.extend({
     autoplay: z.boolean(),
     controls: z.boolean(),
     loop: z.boolean(),
-    id: z.string().min(1),
+    url: z.string().min(1),
     ratioLock: z.boolean()
   }),
   layoutParams: z.record(
