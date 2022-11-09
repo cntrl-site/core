@@ -73,10 +73,28 @@ const VimeoEmbedItem = ItemBaseSchema.extend({
   )
 })
 
+const YoutubeEmbedItem = ItemBaseSchema.extend({
+  type: z.literal(ArticleItemType.YoutubeEmbed),
+  commonParams: z.object({
+    sizing: z.string().min(1),
+    autoplay: z.boolean(),
+    controls: z.boolean(),
+    loop: z.boolean(),
+    url: z.string().min(1),
+    ratioLock: z.boolean()
+  }),
+  layoutParams: z.record(
+    z.object({
+      radius: z.number()
+    })
+  )
+})
+
 export const Item = z.discriminatedUnion('type', [
   ImageItem,
   VideoItem,
   RectangleItem,
   RichTextItemSchema,
-  VimeoEmbedItem
+  VimeoEmbedItem,
+  YoutubeEmbedItem
 ]);

@@ -19,6 +19,7 @@ export type {
   VideoItem as TVideoItem,
   RichTextItem as TRichTextItem,
   VimeoEmbedItem as TVimeoEmbedItem,
+  YoutubeEmbedItem as TYoutubeEmbedItem,
   ItemCommonParamsMap as TItemCommonParamsMap,
   ItemLayoutParamsMap as TItemLayoutParamsMap
 } from './article/ArticleItems';

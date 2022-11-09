@@ -3,5 +3,6 @@ export enum ArticleItemType {
   RichText = 'richtext',
   Video = 'video',
   Rectangle = 'rectangle',
-  VimeoEmbed = 'vimeo-embed'
+  VimeoEmbed = 'vimeo-embed',
+  YoutubeEmbed = 'youtube-embed'
 }
