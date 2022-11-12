@@ -22,6 +22,7 @@ export interface ItemCommonParamsMap {
   [ArticleItemType.Rectangle]: RectangleCommonParams;
   [ArticleItemType.VimeoEmbed]: VimeoEmbedCommonParams;
   [ArticleItemType.YoutubeEmbed]: YoutubeEmbedCommonParams;
+  [ArticleItemType.Custom]: CustomCommonParams;
 }
 
 export interface ItemLayoutParamsMap {
@@ -31,6 +32,7 @@ export interface ItemLayoutParamsMap {
   [ArticleItemType.Rectangle]: RectangleLayoutParams;
   [ArticleItemType.VimeoEmbed]: VimeoEmbedLayoutParams;
   [ArticleItemType.YoutubeEmbed]: YoutubeEmbedLayoutParams;
+  [ArticleItemType.Custom]: {};
 }
 
 interface CommonItemCommonParams {
@@ -54,6 +56,11 @@ interface RichTextCommonParams extends CommonItemCommonParams {
 }
 
 interface RectangleCommonParams extends CommonItemCommonParams {
+  ratioLock: boolean;
+}
+
+interface CustomCommonParams extends CommonItemCommonParams {
+  name: string;
   ratioLock: boolean;
 }
 

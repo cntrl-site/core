@@ -4,5 +4,6 @@ export enum ArticleItemType {
   Video = 'video',
   Rectangle = 'rectangle',
   VimeoEmbed = 'vimeo-embed',
-  YoutubeEmbed = 'youtube-embed'
+  YoutubeEmbed = 'youtube-embed',
+  Custom = 'custom'
 }

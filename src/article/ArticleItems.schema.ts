@@ -3,7 +3,7 @@ import { ItemBaseSchema } from './ItemBase.schema';
 import { ArticleItemType } from './enums/ArticleItemType';
 import { RichTextItemSchema } from './RichTextItem.schema';
 
-const ImageItem = ItemBaseSchema.extend({
+const ImageItemSchema = ItemBaseSchema.extend({
   type: z.literal(ArticleItemType.Image),
   commonParams: z.object({
     url: z.string().min(1),
@@ -20,7 +20,7 @@ const ImageItem = ItemBaseSchema.extend({
   )
 });
 
-const VideoItem = ItemBaseSchema.extend({
+const VideoItemSchema = ItemBaseSchema.extend({
   type: z.literal(ArticleItemType.Video),
   commonParams: z.object({
     url: z.string().min(1),
@@ -38,7 +38,7 @@ const VideoItem = ItemBaseSchema.extend({
   )
 });
 
-const RectangleItem = ItemBaseSchema.extend({
+const RectangleItemSchema = ItemBaseSchema.extend({
   type: z.literal(ArticleItemType.Rectangle),
   commonParams: z.object({
     sizing: z.string().min(1),
@@ -54,7 +54,17 @@ const RectangleItem = ItemBaseSchema.extend({
   )
 });
 
-const VimeoEmbedItem = ItemBaseSchema.extend({
+const CustomItemSchema = ItemBaseSchema.extend({
+  type: z.literal(ArticleItemType.Custom),
+  commonParams: z.object({
+    sizing: z.string().min(1),
+    ratioLock: z.boolean(),
+    name: z.string()
+  }),
+  layoutParams: z.record(z.object({}))
+});
+
+const VimeoEmbedItemSchema = ItemBaseSchema.extend({
   type: z.literal(ArticleItemType.VimeoEmbed),
   commonParams: z.object({
     sizing: z.string().min(1),
@@ -73,7 +83,7 @@ const VimeoEmbedItem = ItemBaseSchema.extend({
   )
 })
 
-const YoutubeEmbedItem = ItemBaseSchema.extend({
+const YoutubeEmbedItemSchema = ItemBaseSchema.extend({
   type: z.literal(ArticleItemType.YoutubeEmbed),
   commonParams: z.object({
     sizing: z.string().min(1),
@@ -91,10 +101,11 @@ const YoutubeEmbedItem = ItemBaseSchema.extend({
 })
 
 export const Item = z.discriminatedUnion('type', [
-  ImageItem,
-  VideoItem,
-  RectangleItem,
+  ImageItemSchema,
+  VideoItemSchema,
+  RectangleItemSchema,
+  CustomItemSchema,
   RichTextItemSchema,
-  VimeoEmbedItem,
-  YoutubeEmbedItem
+  VimeoEmbedItemSchema,
+  YoutubeEmbedItemSchema
 ]);
