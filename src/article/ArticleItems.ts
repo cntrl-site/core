@@ -32,7 +32,7 @@ export interface ItemLayoutParamsMap {
   [ArticleItemType.Rectangle]: RectangleLayoutParams;
   [ArticleItemType.VimeoEmbed]: VimeoEmbedLayoutParams;
   [ArticleItemType.YoutubeEmbed]: YoutubeEmbedLayoutParams;
-  [ArticleItemType.Custom]: {};
+  [ArticleItemType.Custom]: CustomLayoutParams;
 }
 
 interface CommonItemCommonParams {
@@ -89,6 +89,8 @@ interface MediaLayoutParams {
   strokeColor: string;
 }
 
+interface CustomLayoutParams {}
+
 interface VimeoEmbedLayoutParams {
   radius: number;
 }
@@ -129,7 +131,8 @@ export type RectangleItem = Item<ArticleItemType.Rectangle>;
 export type ImageItem = Item<ArticleItemType.Image>;
 export type RichTextItem = Item<ArticleItemType.RichText>;
 export type VimeoEmbedItem = Item<ArticleItemType.VimeoEmbed>;
-export type YoutubeEmbedItem = Item<ArticleItemType.YoutubeEmbed>
+export type YoutubeEmbedItem = Item<ArticleItemType.YoutubeEmbed>;
+export type CustomItem = Item<ArticleItemType.Custom>;
 
 export function isItemType<T extends ArticleItemType>(item: ItemAny, itemType: T): item is Item<T> {
   return item.type === itemType;
