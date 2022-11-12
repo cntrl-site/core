@@ -15,6 +15,7 @@ export type {
   Item as TArticleItem,
   ItemAny as TArticleItemAny,
   RectangleItem as TRectangleItem,
+  CustomItem as TCustomItem,
   ImageItem as TImageItem,
   VideoItem as TVideoItem,
   RichTextItem as TRichTextItem,

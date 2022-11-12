@@ -22,6 +22,7 @@ export interface ItemCommonParamsMap {
   [ArticleItemType.Rectangle]: RectangleCommonParams;
   [ArticleItemType.VimeoEmbed]: VimeoEmbedCommonParams;
   [ArticleItemType.YoutubeEmbed]: YoutubeEmbedCommonParams;
+  [ArticleItemType.Custom]: CustomCommonParams;
 }
 
 export interface ItemLayoutParamsMap {
@@ -31,6 +32,7 @@ export interface ItemLayoutParamsMap {
   [ArticleItemType.Rectangle]: RectangleLayoutParams;
   [ArticleItemType.VimeoEmbed]: VimeoEmbedLayoutParams;
   [ArticleItemType.YoutubeEmbed]: YoutubeEmbedLayoutParams;
+  [ArticleItemType.Custom]: CustomLayoutParams;
 }
 
 interface CommonItemCommonParams {
@@ -54,6 +56,11 @@ interface RichTextCommonParams extends CommonItemCommonParams {
 }
 
 interface RectangleCommonParams extends CommonItemCommonParams {
+  ratioLock: boolean;
+}
+
+interface CustomCommonParams extends CommonItemCommonParams {
+  name: string;
   ratioLock: boolean;
 }
 
@@ -81,6 +88,8 @@ interface MediaLayoutParams {
   strokeWidth: number;
   strokeColor: string;
 }
+
+interface CustomLayoutParams {}
 
 interface VimeoEmbedLayoutParams {
   radius: number;
@@ -122,7 +131,8 @@ export type RectangleItem = Item<ArticleItemType.Rectangle>;
 export type ImageItem = Item<ArticleItemType.Image>;
 export type RichTextItem = Item<ArticleItemType.RichText>;
 export type VimeoEmbedItem = Item<ArticleItemType.VimeoEmbed>;
-export type YoutubeEmbedItem = Item<ArticleItemType.YoutubeEmbed>
+export type YoutubeEmbedItem = Item<ArticleItemType.YoutubeEmbed>;
+export type CustomItem = Item<ArticleItemType.Custom>;
 
 export function isItemType<T extends ArticleItemType>(item: ItemAny, itemType: T): item is Item<T> {
   return item.type === itemType;
