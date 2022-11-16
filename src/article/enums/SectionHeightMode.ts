@@ -1,4 +1,4 @@
 export enum SectionHeightMode {
   ControlUnits = 'control-units' ,
-  ViewportBaseUnits = 'viewport-base-units'
+  ViewportHeightUnits = 'viewport-height-units'
 }
