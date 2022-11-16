@@ -1,15 +1,5 @@
 import { z } from 'zod';
-import { Item } from './ArticleItems.schema';
-
-const Section = z.object({
-  id: z.string().min(1),
-  items: z.array(Item),
-  name: z.string().optional(),
-  height: z.record(z.number().nonnegative()),
-  position: z.record(z.number()),
-  hidden: z.record(z.boolean()),
-  color: z.record(z.nullable(z.string()))
-});
+import { Section } from './Section.schema';
 
 export const ArticleSchema = z.object({
   id: z.string().min(1),

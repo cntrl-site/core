@@ -1,16 +1,20 @@
 // Enums
+import { Section } from './article/Section';
+
 export { ArticleItemType } from './article/enums/ArticleItemType';
 export { TextAlign } from './article/enums/TextAlign';
+export { SectionHeightMode } from './article/enums/SectionHeightMode';
 export { ArticleItemSizingType } from './article/enums/Sizing';
 export { VerticalAlign } from './article/enums/VerticalAlign';
 export { TextTransform } from './article/enums/TextTransform';
+export { AnchorSide } from './article/enums/AnchorSide';
 export { FontFileTypes } from './project/enums/FontFileTypes';
 
 // Types
 export type {
-  Article as TArticle,
-  Section as TArticleSection
+  Article as TArticle
 } from './article/Article';
+export type { Section as TArticleSection } from './article/Section';
 export type {
   Item as TArticleItem,
   ItemAny as TArticleItemAny,
