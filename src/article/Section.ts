@@ -4,7 +4,7 @@ import { SectionHeightMode } from './enums/SectionHeightMode';
 export interface SectionHeight {
   mode: SectionHeightMode;
   units: number;
-  viewportHeight?: number;
+  vhUnits?: number;
 }
 
 export interface Section {

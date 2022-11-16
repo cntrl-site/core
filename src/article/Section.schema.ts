@@ -5,7 +5,7 @@ import { SectionHeightMode } from './enums/SectionHeightMode';
 const SectionHeight = z.object({
   mode: z.nativeEnum(SectionHeightMode),
   units: z.number().nonnegative(),
-  viewportHeight: z.number().optional()
+  vhUnits: z.number().nonnegative().optional()
 })
 
 export const Section = z.object({
