@@ -14,7 +14,10 @@ export { FontFileTypes } from './project/enums/FontFileTypes';
 export type {
   Article as TArticle
 } from './article/Article';
-export type { Section as TArticleSection } from './article/Section';
+export type {
+  Section as TArticleSection,
+  SectionHeight as TSectionHeight
+} from './article/Section';
 export type {
   Item as TArticleItem,
   ItemAny as TArticleItemAny,
