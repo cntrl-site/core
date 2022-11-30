@@ -4,6 +4,5 @@ import { Palette } from './Palette';
 
 export const PaletteSchema: ZodType<Palette> = z.object({
   id: z.string(),
-  projectId: z.string(),
   colors: z.array(ColorSchema)
 });
