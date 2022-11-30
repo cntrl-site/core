@@ -1,3 +1,5 @@
+import { AnchorSide } from './enums/AnchorSide';
+
 export interface ItemArea {
   top: number;
   left: number;
@@ -5,4 +7,5 @@ export interface ItemArea {
   height: number;
   zIndex: number;
   angle: number;
+  anchorSide?: AnchorSide;
 }
