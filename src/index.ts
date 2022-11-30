@@ -41,6 +41,8 @@ export type { Page as TPage } from './page/Page';
 export type { Project as TProject } from './project/Project';
 export type { RichText } from './RichText';
 export type { ItemArea as TArticleItemArea } from './article/ItemArea';
+export type { Palette as TPalette } from './palette/Palette';
+export type { Color as TColor } from './palette/Color';
 
 // Schemas
 export { ArticleSchema } from './article/Article.schema';
@@ -49,6 +51,8 @@ export { CustomFont } from './project/Fonts.schema';
 export { LayoutSchema } from './layout/Layout.schema';
 export { GridSchema, LayoutGridSchema } from './grid/Grid.schema';
 export { PageSchema } from './page/Page.schema';
+export { PaletteSchema } from './palette/Palette.schema';
+export { ColorSchema } from './palette/Color.schema';
 
 // Utils
 export { getClosestLayoutValue, getLayoutMediaQuery } from './article/utils/layouts';
