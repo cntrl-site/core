@@ -18,4 +18,4 @@ export const TypePresetEntrySchema: ZodType<TypePresetEntry> = z.object({
   fontWeight: z.string(),
   tag: z.nativeEnum(AllowedTags),
   layoutParams: z.record(TypePresetLayoutParams)
-})
+});
