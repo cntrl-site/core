@@ -9,6 +9,7 @@ export { VerticalAlign } from './article/enums/VerticalAlign';
 export { TextTransform } from './article/enums/TextTransform';
 export { AnchorSide } from './article/enums/AnchorSide';
 export { FontFileTypes } from './project/enums/FontFileTypes';
+export { AllowedTags } from './typePresets/enums/AllowedTags';
 
 // Types
 export type {
@@ -43,6 +44,11 @@ export type { RichText } from './RichText';
 export type { ItemArea as TArticleItemArea } from './article/ItemArea';
 export type { Palette as TPalette } from './palette/Palette';
 export type { Color as TColor } from './palette/Color';
+export type { TypePresets as TTypePresets } from './typePresets/TypePresets';
+export type {
+  TypePresetEntry as TTypePresetEntry,
+  TypePresetEntryLayoutParams as TTypePresetEntryLayoutParams
+} from './typePresets/TypePresetEntry';
 
 // Schemas
 export { ArticleSchema } from './article/Article.schema';
@@ -53,6 +59,8 @@ export { GridSchema, LayoutGridSchema } from './grid/Grid.schema';
 export { PageSchema } from './page/Page.schema';
 export { PaletteSchema } from './palette/Palette.schema';
 export { ColorSchema } from './palette/Color.schema';
+export { TypePresetsSchema } from './typePresets/TypePresets.schema';
+export { TypePresetEntrySchema } from './typePresets/TypePresetEntry.schema';
 
 // Utils
 export { getClosestLayoutValue, getLayoutMediaQuery } from './article/utils/layouts';
