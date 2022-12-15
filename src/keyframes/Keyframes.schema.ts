@@ -6,7 +6,7 @@ const KeyframesBaseSchema = z.object({
   articleId: z.string().min(1),
   layoutId: z.string().min(1),
   itemId: z.string().min(1),
-  position: z.number().min(0),
+  position: z.number().min(0)
 });
 
 const DimensionsKeyframeSchema = KeyframesBaseSchema.extend({
