@@ -53,6 +53,7 @@ interface RichTextCommonParams extends CommonItemCommonParams {
   text: string;
   blocks?: RichTextBlock[];
   styles?: RichTextStyle[];
+  preset: string | null;
 }
 
 interface RectangleCommonParams extends CommonItemCommonParams {
