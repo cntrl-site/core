@@ -7,7 +7,7 @@ const TypePresetLayoutParams = z.object({
   lineHeight: z.number(),
   letterSpacing: z.number(),
   wordSpacing: z.number(),
-  textTransform: z.string()
+  color: z.string()
 });
 
 export const TypePresetEntrySchema: ZodType<TypePresetEntry> = z.object({

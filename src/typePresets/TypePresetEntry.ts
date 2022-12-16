@@ -5,7 +5,7 @@ export interface TypePresetEntryLayoutParams {
   lineHeight: number;
   letterSpacing: number;
   wordSpacing: number;
-  textTransform: string;
+  color: string;
 }
 
 export interface TypePresetEntry {

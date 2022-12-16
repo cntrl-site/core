@@ -35,7 +35,8 @@ export const RichTextItemSchema = ItemBaseSchema.extend({
     sizing: z.string(),
     text: z.string(),
     blocks: z.array(RichTextBlock).optional(),
-    styles: z.array(RichTextStyle).optional()
+    styles: z.array(RichTextStyle).optional(),
+    preset: z.string().nullable()
   }),
   layoutParams: z.record(
     z.object({
