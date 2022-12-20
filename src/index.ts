@@ -50,7 +50,7 @@ export type {
   TypePresetEntry as TTypePresetEntry,
   TypePresetEntryLayoutParams as TTypePresetEntryLayoutParams
 } from './typePresets/TypePresetEntry';
-export type { KeyframeAny as TKeyframeAny } from './keyframes/Keyframes';
+export type { KeyframeAny as TKeyframeAny, KeyframeValueMap as TKeyframeValueMap } from './keyframes/Keyframes';
 
 // Schemas
 export { ArticleSchema } from './article/Article.schema';

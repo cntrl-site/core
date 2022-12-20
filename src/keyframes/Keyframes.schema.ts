@@ -47,9 +47,9 @@ const BorderWidthKeyframeSchema = KeyframesBaseSchema.extend({
 });
 
 const ColorKeyframeSchema = KeyframesBaseSchema.extend({
-  type: z.literal(KeyframeType.BorderWidth),
+  type: z.literal(KeyframeType.Color),
   value: z.object({
-    borderWidth: z.string()
+    color: z.string()
   })
 });
 

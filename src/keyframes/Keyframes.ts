@@ -19,7 +19,7 @@ export enum KeyframeType {
   Color = 'color'
 }
 
-interface KeyframeValueMap {
+export interface KeyframeValueMap {
   [KeyframeType.Dimensions]: DimensionsValue;
   [KeyframeType.Position]: PositionValue;
   [KeyframeType.Rotation]: RotationValue;
