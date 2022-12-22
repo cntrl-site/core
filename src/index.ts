@@ -10,6 +10,7 @@ export { TextTransform } from './article/enums/TextTransform';
 export { AnchorSide } from './article/enums/AnchorSide';
 export { FontFileTypes } from './project/enums/FontFileTypes';
 export { AllowedTags } from './typePresets/enums/AllowedTags';
+export { KeyframeType } from './keyframes/Keyframes';
 
 // Types
 export type {
@@ -49,6 +50,7 @@ export type {
   TypePresetEntry as TTypePresetEntry,
   TypePresetEntryLayoutParams as TTypePresetEntryLayoutParams
 } from './typePresets/TypePresetEntry';
+export type { KeyframeAny as TKeyframeAny, KeyframeValueMap as TKeyframeValueMap } from './keyframes/Keyframes';
 
 // Schemas
 export { ArticleSchema } from './article/Article.schema';
@@ -61,6 +63,7 @@ export { PaletteSchema } from './palette/Palette.schema';
 export { ColorSchema } from './palette/Color.schema';
 export { TypePresetsSchema } from './typePresets/TypePresets.schema';
 export { TypePresetEntrySchema } from './typePresets/TypePresetEntry.schema';
+export { KeyframeSchema } from './keyframes/Keyframes.schema';
 
 // Utils
 export { getClosestLayoutValue, getLayoutMediaQuery } from './article/utils/layouts';
