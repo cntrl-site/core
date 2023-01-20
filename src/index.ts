@@ -50,7 +50,11 @@ export type {
   TypePresetEntry as TTypePresetEntry,
   TypePresetEntryLayoutParams as TTypePresetEntryLayoutParams
 } from './typePresets/TypePresetEntry';
-export type { KeyframeAny as TKeyframeAny, KeyframeValueMap as TKeyframeValueMap } from './keyframes/Keyframes';
+export type {
+  KeyframeAny as TKeyframeAny,
+  KeyframeValueMap as TKeyframeValueMap,
+  Keyframe as TKeyframe
+} from './keyframes/Keyframes';
 
 // Schemas
 export { ArticleSchema } from './article/Article.schema';
@@ -63,7 +67,7 @@ export { PaletteSchema } from './palette/Palette.schema';
 export { ColorSchema } from './palette/Color.schema';
 export { TypePresetsSchema } from './typePresets/TypePresets.schema';
 export { TypePresetEntrySchema } from './typePresets/TypePresetEntry.schema';
-export { KeyframeSchema } from './keyframes/Keyframes.schema';
+export { KeyframesSchema } from './keyframes/Keyframes.schema';
 
 // Utils
 export { getClosestLayoutValue, getLayoutMediaQuery } from './article/utils/layouts';

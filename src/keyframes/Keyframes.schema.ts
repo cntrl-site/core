@@ -61,3 +61,5 @@ export const KeyframeSchema = z.discriminatedUnion('type', [
   BorderWidthKeyframeSchema,
   ColorKeyframeSchema
 ]);
+
+export const KeyframesSchema = z.array(KeyframeSchema);
