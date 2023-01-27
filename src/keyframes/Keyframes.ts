@@ -27,7 +27,6 @@ export interface KeyframeValueMap {
   [KeyframeType.Rotation]: RotationValue;
   [KeyframeType.BorderRadius]: BorderRadiusValue;
   [KeyframeType.BorderWidth]: BorderWidthValue;
-  [KeyframeType.BorderWidth]: BorderWidthValue;
   [KeyframeType.Color]: ColorValue;
   [KeyframeType.BorderColor]: BorderColorValue;
   [KeyframeType.Opacity]: OpacityValue;
