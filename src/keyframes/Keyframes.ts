@@ -16,7 +16,9 @@ export enum KeyframeType {
   Rotation = 'rotation',
   BorderRadius = 'border-radius',
   BorderWidth = 'border-width',
-  Color = 'color'
+  Color = 'color',
+  BorderColor = 'border-color',
+  Opacity = 'opacity'
 }
 
 export interface KeyframeValueMap {
@@ -26,6 +28,8 @@ export interface KeyframeValueMap {
   [KeyframeType.BorderRadius]: BorderRadiusValue;
   [KeyframeType.BorderWidth]: BorderWidthValue;
   [KeyframeType.Color]: ColorValue;
+  [KeyframeType.BorderColor]: BorderColorValue;
+  [KeyframeType.Opacity]: OpacityValue;
 }
 
 interface DimensionsValue {
@@ -52,4 +56,12 @@ interface BorderWidthValue {
 
 interface ColorValue {
   color: string;
+}
+
+interface BorderColorValue {
+  color: string;
+}
+
+interface OpacityValue {
+  opacity: string;
 }
