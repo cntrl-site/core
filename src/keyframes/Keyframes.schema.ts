@@ -53,13 +53,29 @@ const ColorKeyframeSchema = KeyframesBaseSchema.extend({
   })
 });
 
+const BorderColorKeyframeSchema = KeyframesBaseSchema.extend({
+  type: z.literal(KeyframeType.BorderColor),
+  value: z.object({
+    color: z.string()
+  })
+});
+
+const OpacityKeyframeSchema = KeyframesBaseSchema.extend({
+  type: z.literal(KeyframeType.Opacity),
+  value: z.object({
+    opacity: z.string()
+  })
+});
+
 export const KeyframeSchema = z.discriminatedUnion('type', [
   DimensionsKeyframeSchema,
   PositionKeyframeSchema,
   RotationKeyframeSchema,
   BorderRadiusKeyframeSchema,
   BorderWidthKeyframeSchema,
-  ColorKeyframeSchema
+  ColorKeyframeSchema,
+  BorderColorKeyframeSchema,
+  OpacityKeyframeSchema
 ]);
 
 export const KeyframesSchema = z.array(KeyframeSchema);
