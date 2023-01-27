@@ -63,7 +63,7 @@ const BorderColorKeyframeSchema = KeyframesBaseSchema.extend({
 const OpacityKeyframeSchema = KeyframesBaseSchema.extend({
   type: z.literal(KeyframeType.Opacity),
   value: z.object({
-    opacity: z.string()
+    opacity: z.number().nonnegative()
   })
 });
 

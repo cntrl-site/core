@@ -63,5 +63,5 @@ interface BorderColorValue {
 }
 
 interface OpacityValue {
-  opacity: string;
+  opacity: number;
 }
