@@ -67,7 +67,7 @@ export { PaletteSchema } from './palette/Palette.schema';
 export { ColorSchema } from './palette/Color.schema';
 export { TypePresetsSchema } from './typePresets/TypePresets.schema';
 export { TypePresetEntrySchema } from './typePresets/TypePresetEntry.schema';
-export { KeyframesSchema } from './keyframes/Keyframes.schema';
+export { KeyframesSchema, KeyframeSchema } from './keyframes/Keyframes.schema';
 
 // Utils
 export { getClosestLayoutValue, getLayoutMediaQuery } from './article/utils/layouts';
