@@ -56,7 +56,7 @@ interface RichTextCommonParams extends CommonItemCommonParams {
   preset: string | null;
 }
 
-interface RectangleCommonParams extends CommonItemCommonParams {
+interface RectangleCommonParams extends CommonItemCommonParams{
   ratioLock: boolean;
 }
 
@@ -83,20 +83,24 @@ interface YoutubeEmbedCommonParams extends CommonItemCommonParams {
   ratioLock: boolean;
 }
 
-interface MediaLayoutParams {
+interface ItemBaseLayoutParams {
+  sticky?: StickyParams;
+}
+
+interface MediaLayoutParams extends ItemBaseLayoutParams {
   opacity: number;
   radius: number;
   strokeWidth: number;
   strokeColor: string;
 }
 
-interface CustomLayoutParams {}
+interface CustomLayoutParams extends ItemBaseLayoutParams {}
 
-interface VimeoEmbedLayoutParams {
+interface VimeoEmbedLayoutParams extends ItemBaseLayoutParams {
   radius: number;
 }
 
-interface YoutubeEmbedLayoutParams {
+interface YoutubeEmbedLayoutParams extends ItemBaseLayoutParams {
   radius: number;
 }
 
@@ -106,17 +110,22 @@ interface VideoLayoutParams extends MediaLayoutParams {
   autoplay: boolean;
 }
 
-interface RichTextLayoutParams {
+interface RichTextLayoutParams extends ItemBaseLayoutParams {
   styles?: RichTextStyle[];
   textAlign: TextAlign;
   lineHeightLock: boolean;
 }
 
-interface RectangleLayoutParams {
+interface RectangleLayoutParams extends ItemBaseLayoutParams {
   radius: number;
   strokeWidth: number;
   fillColor: string;
   strokeColor: string;
+}
+
+export interface StickyParams {
+  from: number;
+  to: number;
 }
 
 export interface Link {
