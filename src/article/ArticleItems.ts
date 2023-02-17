@@ -56,7 +56,7 @@ interface RichTextCommonParams extends CommonItemCommonParams {
   preset: string | null;
 }
 
-interface RectangleCommonParams extends CommonItemCommonParams{
+interface RectangleCommonParams extends CommonItemCommonParams {
   ratioLock: boolean;
 }
 
