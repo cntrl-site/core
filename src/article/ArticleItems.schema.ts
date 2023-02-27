@@ -12,6 +12,10 @@ const ImageItemSchema = ItemBaseSchema.extend({
   }),
   layoutParams: z.record(
     z.object({
+      sticky: z.object({
+        from: z.number(),
+        to: z.number().optional()
+      }).nullable(),
       opacity: z.number().nonnegative(),
       radius: z.number(),
       strokeWidth: z.number(),
@@ -29,6 +33,10 @@ const VideoItemSchema = ItemBaseSchema.extend({
   }),
   layoutParams: z.record(
     z.object({
+      sticky: z.object({
+        from: z.number(),
+        to: z.number().optional()
+      }).nullable(),
       autoplay: z.boolean(),
       opacity: z.number().nonnegative(),
       radius: z.number(),
@@ -46,6 +54,10 @@ const RectangleItemSchema = ItemBaseSchema.extend({
   }),
   layoutParams: z.record(
     z.object({
+      sticky: z.object({
+        from: z.number(),
+        to: z.number().optional()
+      }).nullable(),
       radius: z.number(),
       strokeWidth: z.number(),
       fillColor: z.string().min(1),
@@ -61,7 +73,12 @@ const CustomItemSchema = ItemBaseSchema.extend({
     ratioLock: z.boolean(),
     name: z.string()
   }),
-  layoutParams: z.record(z.object({}))
+  layoutParams: z.record(z.object({
+    sticky: z.object({
+      from: z.number(),
+      to: z.number().optional()
+    }).nullable()
+  }))
 });
 
 const VimeoEmbedItemSchema = ItemBaseSchema.extend({
@@ -78,7 +95,11 @@ const VimeoEmbedItemSchema = ItemBaseSchema.extend({
   }),
   layoutParams: z.record(
     z.object({
-      radius: z.number()
+      radius: z.number(),
+      sticky: z.object({
+        from: z.number(),
+        to: z.number().optional()
+      }).nullable()
     })
   )
 })
@@ -95,7 +116,11 @@ const YoutubeEmbedItemSchema = ItemBaseSchema.extend({
   }),
   layoutParams: z.record(
     z.object({
-      radius: z.number()
+      radius: z.number(),
+      sticky: z.object({
+        from: z.number(),
+        to: z.number().optional()
+      }).nullable()
     })
   )
 })

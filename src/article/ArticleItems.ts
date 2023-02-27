@@ -84,7 +84,7 @@ interface YoutubeEmbedCommonParams extends CommonItemCommonParams {
 }
 
 interface ItemBaseLayoutParams {
-  sticky?: StickyParams;
+  sticky: StickyParams | null;
 }
 
 interface MediaLayoutParams extends ItemBaseLayoutParams {
@@ -125,7 +125,7 @@ interface RectangleLayoutParams extends ItemBaseLayoutParams {
 
 export interface StickyParams {
   from: number;
-  to: number;
+  to?: number;
 }
 
 export interface Link {

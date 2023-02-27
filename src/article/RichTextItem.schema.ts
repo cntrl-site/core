@@ -42,7 +42,11 @@ export const RichTextItemSchema = ItemBaseSchema.extend({
     z.object({
       styles: z.array(RichTextStyle).optional(),
       textAlign: z.nativeEnum(TextAlign),
-      lineHeightLock: z.boolean()
+      lineHeightLock: z.boolean(),
+      sticky: z.object({
+        from: z.number(),
+        to: z.number().optional()
+      }).nullable()
     })
   )
 });
