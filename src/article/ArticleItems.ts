@@ -53,7 +53,6 @@ interface RichTextCommonParams extends CommonItemCommonParams {
   text: string;
   blocks?: RichTextBlock[];
   styles?: RichTextStyle[];
-  preset: string | null;
 }
 
 interface RectangleCommonParams extends CommonItemCommonParams {
@@ -111,6 +110,7 @@ interface VideoLayoutParams extends MediaLayoutParams {
 }
 
 interface RichTextLayoutParams extends ItemBaseLayoutParams {
+  preset: string | null;
   styles?: RichTextStyle[];
   textAlign: TextAlign;
   lineHeightLock: boolean;
