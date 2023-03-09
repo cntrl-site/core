@@ -9,7 +9,6 @@ export { VerticalAlign } from './article/enums/VerticalAlign';
 export { TextTransform } from './article/enums/TextTransform';
 export { AnchorSide } from './article/enums/AnchorSide';
 export { FontFileTypes } from './project/enums/FontFileTypes';
-export { AllowedTags } from './typePresets/enums/AllowedTags';
 export { KeyframeType } from './keyframes/Keyframes';
 
 // Types
@@ -46,10 +45,7 @@ export type { ItemArea as TArticleItemArea } from './article/ItemArea';
 export type { Palette as TPalette } from './palette/Palette';
 export type { Color as TColor } from './palette/Color';
 export type { TypePresets as TTypePresets } from './typePresets/TypePresets';
-export type {
-  TypePresetEntry as TTypePresetEntry,
-  TypePresetEntryLayoutParams as TTypePresetEntryLayoutParams
-} from './typePresets/TypePresetEntry';
+export type { TypePresetEntry as TTypePresetEntry } from './typePresets/TypePresetEntry';
 export type {
   KeyframeAny as TKeyframeAny,
   KeyframeValueMap as TKeyframeValueMap,
