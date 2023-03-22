@@ -10,6 +10,7 @@ export { TextTransform } from './article/enums/TextTransform';
 export { AnchorSide } from './article/enums/AnchorSide';
 export { FontFileTypes } from './project/enums/FontFileTypes';
 export { KeyframeType } from './keyframes/Keyframes';
+export { TypePresetStatus } from './typePresets/TypePresetStatus'
 
 // Types
 export type {

@@ -1,3 +1,4 @@
+import { TypePresetStatus } from './TypePresetStatus';
 
 export interface TypePresetEntry {
   id: string;
@@ -10,4 +11,5 @@ export interface TypePresetEntry {
   letterSpacing: number;
   wordSpacing: number;
   color: string;
+  status: TypePresetStatus;
 }
