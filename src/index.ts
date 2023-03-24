@@ -1,5 +1,6 @@
 // Enums
 import { Section } from './article/Section';
+import { CntrlColorParser } from './expr/color/ColorGrammar';
 
 export { ArticleItemType } from './article/enums/ArticleItemType';
 export { TextAlign } from './article/enums/TextAlign';
@@ -67,3 +68,6 @@ export { KeyframesSchema, KeyframeSchema } from './keyframes/Keyframes.schema';
 
 // Utils
 export { getClosestLayoutValue, getLayoutMediaQuery } from './article/utils/layouts';
+
+//Color parser
+export { CntrlColorParser } from './expr/color/ColorGrammar';
