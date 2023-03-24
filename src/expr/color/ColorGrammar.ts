@@ -179,7 +179,7 @@ function Oklch(): Parser<OklchToken> {
   return parseOklch;
 }
 
-export function CntrlColorParser(): Parser<RgbaToken | OklchToken> {
+export function ColorParser(): Parser<RgbaToken | OklchToken> {
   const parseColor = Alt(
     RgbComma(),
     RgbSpace(),
