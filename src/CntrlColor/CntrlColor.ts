@@ -1,4 +1,4 @@
-import { ColorParser } from '../expr/color/ColorGrammar';
+import { ColorParser } from './expr/color/ColorGrammar';
 import { oklchToRgb, rgbToOklch } from './colorConvertors';
 
 interface RgbaColorData {
