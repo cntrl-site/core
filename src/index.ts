@@ -71,3 +71,6 @@ export { KeyframesSchema, KeyframeSchema } from './keyframes/Keyframes.schema';
 
 // Utils
 export { getClosestLayoutValue, getLayoutMediaQuery } from './article/utils/layouts';
+
+//Color parser
+export { CntrlColor } from './CntrlColor/CntrlColor';
