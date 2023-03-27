@@ -18,7 +18,7 @@ describe('CntrlColor', () => {
     expect(oklchColor).toBeInstanceOf(OklchColor);
     expect(oklchColor.getOklch()).toEqual(oklchData);
   });
-  it('parse rgba color string and coverts it to oklch and hex format', () => {
+  it('parse rgba color string and converts it to oklch and hex format', () => {
     const color = 'rgba(0, 255, 0, 1)';
     const cntrlColor = CntrlColor.parse(color);
     expect(cntrlColor).toBeInstanceOf(CntrlColor);
@@ -31,7 +31,7 @@ describe('CntrlColor', () => {
     expect(parseFloat(oklch.c.toFixed(3))).toBeCloseTo(0.295)
     expect(parseFloat(oklch.h.toFixed(1))).toBeCloseTo(142.5)
   });
-  it('parse oklch color string and coverts it to rgba and hex format', () => {
+  it('parse oklch color string and converts it to rgba and hex format', () => {
     const color = 'oklch(0.6 0.1 120 / 1)';
     const cntrlColor = CntrlColor.parse(color);
     expect(cntrlColor).toBeInstanceOf(CntrlColor);
@@ -40,7 +40,7 @@ describe('CntrlColor', () => {
     expect(cntrlColor.fmt('rgba')).toBe('rgba(121, 137, 64, 1)');
     expect(cntrlColor.fmt('hex').toLowerCase()).toBe('#798940');
   });
-  it('parse hex color string and coverts it to rgba and oklch format', () => {
+  it('parse hex color string and converts it to rgba and oklch format', () => {
     const color = '#00ff00';
     const cntrlColor = CntrlColor.parse(color);
     expect(cntrlColor).toBeInstanceOf(CntrlColor);
@@ -75,8 +75,3 @@ describe('CntrlColor', () => {
     expect(result3.fmt('oklch')).toBe(targetColor);
   });
 });
-
-
-
-
-
