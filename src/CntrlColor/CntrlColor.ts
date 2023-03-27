@@ -17,7 +17,7 @@ interface OklchColorData {
   a: number;
 }
 
-type ColorData = RgbaColorData | OklchColorData;
+export type ColorData = RgbaColorData | OklchColorData;
 
 export abstract class CntrlColor {
   public static rgba(r: number, g: number, b: number, a: number = 1): CntrlColor {
@@ -61,8 +61,9 @@ export abstract class CntrlColor {
     throw new Error('not implemented');
   }
 
-  public getHex(): string {
-    throw new Error('not implemented');
+  protected getHex(): string {
+    const { r, g, b } = this.getRgba();
+    return '#' + [r, g, b].map(c => c.toString(16).padStart(2, '0')).join('');
   }
 
   public getAlpha(): number {
@@ -74,7 +75,7 @@ export abstract class CntrlColor {
   }
 }
 
-class RgbaColor extends CntrlColor {
+export class RgbaColor extends CntrlColor {
   constructor(
     private red: number,
     private green: number,
@@ -105,10 +106,6 @@ class RgbaColor extends CntrlColor {
     };
   }
 
-  public getHex(): string {
-    return '#' + [this.red, this.green, this.blue].map(c => c.toString(16).padStart(2, '0')).join('');
-  }
-
   public getOklch(): OklchColorData {
     const { l, c, h, a } = rgbToOklch(this.red, this.green, this.blue, this.alpha);
     return {
@@ -121,7 +118,7 @@ class RgbaColor extends CntrlColor {
   }
 
   public toCss(): string {
-    return `rgba(${this.red}, ${this.green}, ${this.blue}, ${this.alpha})`;
+    return this.fmt('rgba');
   }
 
   public getAlpha(): number {
@@ -138,7 +135,7 @@ class RgbaColor extends CntrlColor {
   }
 }
 
-class OklchColor extends CntrlColor {
+export class OklchColor extends CntrlColor {
   constructor(
     private lightness: number,
     private chroma: number,
@@ -150,10 +147,7 @@ class OklchColor extends CntrlColor {
 
   public fmt(format: 'rgba' | 'hex' | 'oklch' = 'oklch', alpha?: number): string {
     switch (format) {
-      case 'hex': {
-        const { r, g, b } = this.getRgba();
-        return '#' + [r, g, b].map(c => c.toString(16).padStart(2, '0')).join('');
-      }
+      case 'hex': return this.getHex();
       case 'rgba': {
         const { r, g, b, a } = this.getRgba();
         return `rgba(${r}, ${g}, ${b}, ${alpha ?? a})`;
@@ -163,11 +157,10 @@ class OklchColor extends CntrlColor {
   }
 
   public toCss(): string {
-    if (!CSS.supports('color: oklch(42 0.42 90 / 1)')) {
-      const { r, g, b, a } = this.getRgba();
-      return `rgba(${r}, ${g}, ${b}, ${a})`;
+    if (!window.CSS.supports('color: oklch(42 0.3 90 / 1)')) {
+      return this.fmt('rgba');
     }
-    return `oklch(${this.lightness} ${this.chroma} ${this.hue} / ${this.alpha})`;
+    return this.fmt('oklch');
   }
 
   public getOklch(): OklchColorData {
@@ -191,11 +184,6 @@ class OklchColor extends CntrlColor {
     };
   }
 
-  public getHex(): string {
-    const { r, g, b } = this.getRgba();
-    return '#' + [r, g, b].map(c => c.toString(16).padStart(2, '0')).join('');
-  }
-
   public getAlpha(): number {
     return this.alpha;
   }
@@ -206,7 +194,7 @@ class OklchColor extends CntrlColor {
     const c = getRangeValue(amount, this.chroma, targetC);
     const h = getRangeValue(amount, this.hue, targetH);
     const a = getRangeValue(amount, this.alpha, targetA);
-    return CntrlColor.from({ type: 'oklch', l, c, h, a: Math.round(a) });
+    return CntrlColor.from({ type: 'oklch', l, c, h, a: parseFloat(a.toFixed(2)) });
   }
 }
 
