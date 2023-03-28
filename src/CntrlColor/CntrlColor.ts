@@ -1,3 +1,4 @@
+/// <reference lib="dom" />
 import { ColorParser } from './expr/color/ColorGrammar';
 import { oklchToRgb, rgbToOklch } from './colorConvertors';
 
@@ -157,7 +158,7 @@ export class OklchColor extends CntrlColor {
   }
 
   public toCss(): string {
-    if (!window.CSS.supports('color: oklch(42 0.3 90 / 1)')) {
+    if (typeof window === 'undefined' || !window.CSS.supports('color: oklch(42 0.3 90 / 1)')) {
       return this.fmt('rgba');
     }
     return this.fmt('oklch');
