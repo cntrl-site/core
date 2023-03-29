@@ -1,4 +1,4 @@
-import { Schema, z } from 'zod';
+import { z } from 'zod';
 import { ArticleItemType } from './enums/ArticleItemType';
 import { RichTextBlock as TRichTextBlock } from './RichText';
 import { ItemBaseSchema } from './ItemBase.schema';
@@ -19,7 +19,7 @@ const RichTextStyle = z.object({
   value: z.string().optional()
 });
 
-const RichTextBlock: Schema<TRichTextBlock> = z.lazy(() => (
+const RichTextBlock: z.Schema<TRichTextBlock> = z.lazy(() => (
   z.object({
     start: z.number().nonnegative(),
     end: z.number().nonnegative(),
