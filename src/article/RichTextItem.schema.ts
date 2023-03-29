@@ -1,4 +1,4 @@
-import { Schema, z, ZodType } from 'zod';
+import { Schema, z } from 'zod';
 import { ArticleItemType } from './enums/ArticleItemType';
 import { RichTextBlock as TRichTextBlock } from './RichText';
 import { ItemBaseSchema } from './ItemBase.schema';
@@ -50,4 +50,4 @@ export const RichTextItemSchema = ItemBaseSchema.extend({
       }).nullable()
     })
   )
-}) satisfies ZodType<TArticleItem<ArticleItemType.RichText>>;
+}) satisfies z.ZodType<TArticleItem<ArticleItemType.RichText>>;
