@@ -50,4 +50,4 @@ export const RichTextItemSchema = ItemBaseSchema.extend({
       }).nullable()
     })
   )
-}) satisfies z.ZodType<TArticleItem<ArticleItemType.RichText>>;
+});
