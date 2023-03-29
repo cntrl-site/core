@@ -1,14 +1,6 @@
 import { z, ZodType } from 'zod';
 import { TypePresetEntry } from './TypePresetEntry';
-import { AllowedTags } from './enums/AllowedTags';
-
-const TypePresetLayoutParams = z.object({
-  fontSize: z.number(),
-  lineHeight: z.number(),
-  letterSpacing: z.number(),
-  wordSpacing: z.number(),
-  color: z.string()
-});
+import { TypePresetStatus } from './TypePresetStatus';
 
 export const TypePresetEntrySchema: ZodType<TypePresetEntry> = z.object({
   id: z.string(),
@@ -16,6 +8,10 @@ export const TypePresetEntrySchema: ZodType<TypePresetEntry> = z.object({
   fontFamily: z.string(),
   fontStyle: z.string(),
   fontWeight: z.string(),
-  tag: z.nativeEnum(AllowedTags),
-  layoutParams: z.record(TypePresetLayoutParams)
+  fontSize: z.number(),
+  lineHeight: z.number(),
+  letterSpacing: z.number(),
+  wordSpacing: z.number(),
+  color: z.string(),
+  status: z.nativeEnum(TypePresetStatus)
 });

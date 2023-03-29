@@ -1,12 +1,4 @@
-import { AllowedTags } from './enums/AllowedTags';
-
-export interface TypePresetEntryLayoutParams {
-  fontSize: number;
-  lineHeight: number;
-  letterSpacing: number;
-  wordSpacing: number;
-  color: string;
-}
+import { TypePresetStatus } from './TypePresetStatus';
 
 export interface TypePresetEntry {
   id: string;
@@ -14,6 +6,10 @@ export interface TypePresetEntry {
   fontFamily: string;
   fontStyle: string;
   fontWeight: string;
-  tag: AllowedTags;
-  layoutParams: Record<string, TypePresetEntryLayoutParams>;
+  fontSize: number;
+  lineHeight: number;
+  letterSpacing: number;
+  wordSpacing: number;
+  color: string;
+  status: TypePresetStatus;
 }
