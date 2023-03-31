@@ -5,6 +5,6 @@ export interface Color {
   name: string;
   color: string;
   updatedAt: number;
-  status: PaletteColorStatus
+  status: PaletteColorStatus;
 }
 
