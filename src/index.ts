@@ -12,6 +12,7 @@ export { FontFileTypes } from './project/enums/FontFileTypes';
 export { AllowedTags } from './typePresets/enums/AllowedTags';
 export { KeyframeType } from './keyframes/Keyframes';
 export { TypePresetStatus } from './typePresets/TypePresetStatus';
+export { PaletteColorStatus } from './palette/PaletteColorStatus';
 
 // Types
 export type {

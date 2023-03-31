@@ -1,5 +1,10 @@
+import { PaletteColorStatus } from './PaletteColorStatus';
+
 export interface Color {
   id: string;
   name: string;
-  rgba: string;
+  color: string;
+  updatedAt: number;
+  status: PaletteColorStatus
 }
+
