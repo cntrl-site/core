@@ -3,7 +3,7 @@ import { PaletteColorStatus } from './PaletteColorStatus';
 export interface Color {
   id: string;
   name: string;
-  color: string;
+  value: string;
   updatedAt: number;
   status: PaletteColorStatus;
 }
