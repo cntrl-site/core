@@ -35,11 +35,7 @@ export interface ItemLayoutParamsMap {
   [ArticleItemType.Custom]: CustomLayoutParams;
 }
 
-interface CommonItemCommonParams {
-  sizing: string;
-}
-
-interface MediaCommonParams extends CommonItemCommonParams {
+interface MediaCommonParams {
   url: string;
   ratioLock: boolean;
 }
@@ -48,23 +44,22 @@ interface VideoCommonParams extends MediaCommonParams {}
 
 interface ImageCommonParams extends MediaCommonParams {}
 
-interface RichTextCommonParams extends CommonItemCommonParams {
-  sizing: string;
+interface RichTextCommonParams {
   text: string;
   blocks?: RichTextBlock[];
   styles?: RichTextStyle[];
 }
 
-interface RectangleCommonParams extends CommonItemCommonParams {
+interface RectangleCommonParams {
   ratioLock: boolean;
 }
 
-interface CustomCommonParams extends CommonItemCommonParams {
+interface CustomCommonParams {
   name: string;
   ratioLock: boolean;
 }
 
-interface VimeoEmbedCommonParams extends CommonItemCommonParams {
+interface VimeoEmbedCommonParams {
   autoplay: boolean;
   controls: boolean;
   loop: boolean;
@@ -74,7 +69,7 @@ interface VimeoEmbedCommonParams extends CommonItemCommonParams {
   ratioLock: boolean;
 }
 
-interface YoutubeEmbedCommonParams extends CommonItemCommonParams {
+interface YoutubeEmbedCommonParams {
   autoplay: boolean;
   controls: boolean;
   loop: boolean;
@@ -114,6 +109,7 @@ interface RichTextLayoutParams extends ItemBaseLayoutParams {
   styles?: RichTextStyle[];
   textAlign: TextAlign;
   lineHeightLock: boolean;
+  sizing: string;
 }
 
 interface RectangleLayoutParams extends ItemBaseLayoutParams {

@@ -1,9 +1,10 @@
-import { z } from 'zod';
+import { z, ZodType } from 'zod';
 import { ArticleItemType } from './enums/ArticleItemType';
 import { RichTextBlock as TRichTextBlock } from './RichText';
 import { ItemBaseSchema } from './ItemBase.schema';
 import { TextAlign } from './enums/TextAlign';
 import { TArticleItem } from '../index';
+import { RichTextItem } from './ArticleItems';
 
 const RichTextEntity = z.object({
   start: z.number().nonnegative(),
@@ -33,7 +34,6 @@ const RichTextBlock: z.Schema<TRichTextBlock> = z.lazy(() => (
 export const RichTextItemSchema = ItemBaseSchema.extend({
   type: z.literal(ArticleItemType.RichText),
   commonParams: z.object({
-    sizing: z.string(),
     text: z.string(),
     blocks: z.array(RichTextBlock).optional(),
     styles: z.array(RichTextStyle).optional()
@@ -44,10 +44,11 @@ export const RichTextItemSchema = ItemBaseSchema.extend({
       styles: z.array(RichTextStyle).optional(),
       textAlign: z.nativeEnum(TextAlign),
       lineHeightLock: z.boolean(),
+      sizing: z.string(),
       sticky: z.object({
         from: z.number(),
         to: z.number().optional()
       }).nullable()
     })
   )
-});
+}) satisfies ZodType<RichTextItem>;

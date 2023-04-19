@@ -1,13 +1,13 @@
-import { z } from 'zod';
+import { z, ZodType } from 'zod';
 import { ItemBaseSchema } from './ItemBase.schema';
 import { ArticleItemType } from './enums/ArticleItemType';
 import { RichTextItemSchema } from './RichTextItem.schema';
+import { CustomItem, ImageItem, RectangleItem, VideoItem, VimeoEmbedItem, YoutubeEmbedItem } from './ArticleItems';
 
 const ImageItemSchema = ItemBaseSchema.extend({
   type: z.literal(ArticleItemType.Image),
   commonParams: z.object({
     url: z.string().min(1),
-    sizing: z.string().min(1),
     ratioLock: z.boolean()
   }),
   layoutParams: z.record(
@@ -22,13 +22,12 @@ const ImageItemSchema = ItemBaseSchema.extend({
       strokeColor: z.string()
     })
   )
-});
+}) satisfies ZodType<ImageItem>;
 
 const VideoItemSchema = ItemBaseSchema.extend({
   type: z.literal(ArticleItemType.Video),
   commonParams: z.object({
     url: z.string().min(1),
-    sizing: z.string().min(1),
     ratioLock: z.boolean()
   }),
   layoutParams: z.record(
@@ -44,12 +43,11 @@ const VideoItemSchema = ItemBaseSchema.extend({
       strokeColor: z.string()
     })
   )
-});
+}) satisfies ZodType<VideoItem>;
 
 const RectangleItemSchema = ItemBaseSchema.extend({
   type: z.literal(ArticleItemType.Rectangle),
   commonParams: z.object({
-    sizing: z.string().min(1),
     ratioLock: z.boolean()
   }),
   layoutParams: z.record(
@@ -64,12 +62,11 @@ const RectangleItemSchema = ItemBaseSchema.extend({
       strokeColor: z.string().min(1)
     })
   )
-});
+}) satisfies ZodType<RectangleItem>;
 
 const CustomItemSchema = ItemBaseSchema.extend({
   type: z.literal(ArticleItemType.Custom),
   commonParams: z.object({
-    sizing: z.string().min(1),
     ratioLock: z.boolean(),
     name: z.string()
   }),
@@ -79,12 +76,11 @@ const CustomItemSchema = ItemBaseSchema.extend({
       to: z.number().optional()
     }).nullable()
   }))
-});
+}) satisfies ZodType<CustomItem>;
 
 const VimeoEmbedItemSchema = ItemBaseSchema.extend({
   type: z.literal(ArticleItemType.VimeoEmbed),
   commonParams: z.object({
-    sizing: z.string().min(1),
     autoplay: z.boolean(),
     controls: z.boolean(),
     loop: z.boolean(),
@@ -102,12 +98,11 @@ const VimeoEmbedItemSchema = ItemBaseSchema.extend({
       }).nullable()
     })
   )
-})
+}) satisfies ZodType<VimeoEmbedItem>;
 
 const YoutubeEmbedItemSchema = ItemBaseSchema.extend({
   type: z.literal(ArticleItemType.YoutubeEmbed),
   commonParams: z.object({
-    sizing: z.string().min(1),
     autoplay: z.boolean(),
     controls: z.boolean(),
     loop: z.boolean(),
@@ -123,7 +118,7 @@ const YoutubeEmbedItemSchema = ItemBaseSchema.extend({
       }).nullable()
     })
   )
-})
+}) satisfies ZodType<YoutubeEmbedItem>;
 
 export const Item = z.discriminatedUnion('type', [
   ImageItemSchema,
