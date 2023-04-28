@@ -2,6 +2,7 @@ import { ArticleItemType } from './enums/ArticleItemType';
 import { ItemArea } from './ItemArea';
 import { RichTextBlock, RichTextStyle } from './RichText';
 import { TextAlign } from './enums/TextAlign';
+import { ScaleAnchor } from './enums/ScaleAnchor';
 
 export type ItemAny = Item<ArticleItemType>;
 
@@ -79,6 +80,8 @@ interface YoutubeEmbedCommonParams {
 
 interface ItemBaseLayoutParams {
   sticky: StickyParams | null;
+  scale: number;
+  scaleAnchor: ScaleAnchor;
 }
 
 interface MediaLayoutParams extends ItemBaseLayoutParams {
