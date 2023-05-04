@@ -1,9 +1,8 @@
-import { string, z, ZodType } from 'zod';
+import { z, ZodType } from 'zod';
 import { ItemBaseSchema } from './ItemBase.schema';
 import { ArticleItemType } from './enums/ArticleItemType';
 import { RichTextItemSchema } from './RichTextItem.schema';
 import { CustomItem, ImageItem, RectangleItem, VideoItem, VimeoEmbedItem, YoutubeEmbedItem } from './ArticleItems';
-import { ScaleAnchor } from './enums/ScaleAnchor';
 
 const ImageItemSchema = ItemBaseSchema.extend({
   type: z.literal(ArticleItemType.Image),
@@ -20,9 +19,7 @@ const ImageItemSchema = ItemBaseSchema.extend({
       opacity: z.number().nonnegative(),
       radius: z.number(),
       strokeWidth: z.number(),
-      strokeColor: z.string(),
-      scale: z.number().nonnegative(),
-      scaleAnchor: z.nativeEnum(ScaleAnchor)
+      strokeColor: z.string()
     })
   )
 }) satisfies ZodType<ImageItem>;
@@ -43,9 +40,7 @@ const VideoItemSchema = ItemBaseSchema.extend({
       opacity: z.number().nonnegative(),
       radius: z.number(),
       strokeWidth: z.number(),
-      strokeColor: z.string(),
-      scale: z.number().nonnegative(),
-      scaleAnchor: z.nativeEnum(ScaleAnchor)
+      strokeColor: z.string()
     })
   )
 }) satisfies ZodType<VideoItem>;
@@ -64,9 +59,7 @@ const RectangleItemSchema = ItemBaseSchema.extend({
       radius: z.number(),
       strokeWidth: z.number(),
       fillColor: z.string().min(1),
-      strokeColor: z.string().min(1),
-      scale: z.number().nonnegative(),
-      scaleAnchor: z.nativeEnum(ScaleAnchor)
+      strokeColor: z.string().min(1)
     })
   )
 }) satisfies ZodType<RectangleItem>;
@@ -81,9 +74,7 @@ const CustomItemSchema = ItemBaseSchema.extend({
     sticky: z.object({
       from: z.number(),
       to: z.number().optional()
-    }).nullable(),
-    scale: z.number().nonnegative(),
-    scaleAnchor: z.nativeEnum(ScaleAnchor)
+    }).nullable()
   }))
 }) satisfies ZodType<CustomItem>;
 
@@ -104,9 +95,7 @@ const VimeoEmbedItemSchema = ItemBaseSchema.extend({
       sticky: z.object({
         from: z.number(),
         to: z.number().optional()
-      }).nullable(),
-      scale: z.number().nonnegative(),
-      scaleAnchor: z.nativeEnum(ScaleAnchor)
+      }).nullable()
     })
   )
 }) satisfies ZodType<VimeoEmbedItem>;
@@ -126,9 +115,7 @@ const YoutubeEmbedItemSchema = ItemBaseSchema.extend({
       sticky: z.object({
         from: z.number(),
         to: z.number().optional()
-      }).nullable(),
-      scale: z.number().nonnegative(),
-      scaleAnchor: z.nativeEnum(ScaleAnchor)
+      }).nullable()
     })
   )
 }) satisfies ZodType<YoutubeEmbedItem>;

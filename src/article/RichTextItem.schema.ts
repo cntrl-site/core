@@ -3,9 +3,7 @@ import { ArticleItemType } from './enums/ArticleItemType';
 import { RichTextBlock as TRichTextBlock } from './RichText';
 import { ItemBaseSchema } from './ItemBase.schema';
 import { TextAlign } from './enums/TextAlign';
-import { TArticleItem } from '../index';
 import { RichTextItem } from './ArticleItems';
-import { ScaleAnchor } from './enums/ScaleAnchor';
 
 const RichTextEntity = z.object({
   start: z.number().nonnegative(),
@@ -49,9 +47,7 @@ export const RichTextItemSchema = ItemBaseSchema.extend({
       sticky: z.object({
         from: z.number(),
         to: z.number().optional()
-      }).nullable(),
-      scale: z.number().nonnegative(),
-      scaleAnchor: z.nativeEnum(ScaleAnchor)
+      }).nullable()
     })
   )
 }) satisfies ZodType<RichTextItem>;
