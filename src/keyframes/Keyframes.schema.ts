@@ -3,6 +3,7 @@ import { KeyframeType } from './Keyframes';
 
 const KeyframesBaseSchema = z.object({
   id: z.string().min(1),
+  // TODO remove because it's only used on the infrastructure level
   articleId: z.string().min(1),
   layoutId: z.string().min(1),
   itemId: z.string().min(1),
