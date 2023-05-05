@@ -13,6 +13,7 @@ export { AllowedTags } from './typePresets/enums/AllowedTags';
 export { KeyframeType } from './keyframes/Keyframes';
 export { TypePresetStatus } from './typePresets/TypePresetStatus';
 export { PaletteColorStatus } from './palette/PaletteColorStatus';
+export { ScaleAnchor } from './article/enums/ScaleAnchor';
 
 // Types
 export type {

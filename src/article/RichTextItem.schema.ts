@@ -3,7 +3,6 @@ import { ArticleItemType } from './enums/ArticleItemType';
 import { RichTextBlock as TRichTextBlock } from './RichText';
 import { ItemBaseSchema } from './ItemBase.schema';
 import { TextAlign } from './enums/TextAlign';
-import { TArticleItem } from '../index';
 import { RichTextItem } from './ArticleItems';
 
 const RichTextEntity = z.object({
