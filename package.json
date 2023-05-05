@@ -1,6 +1,6 @@
 {
   "name": "@cntrl-site/core",
-  "version": "1.20.0",
+  "version": "1.21.0",
   "description": "CNTRL Core",
   "main": "lib/index.js",
   "types": "src/index.ts",
