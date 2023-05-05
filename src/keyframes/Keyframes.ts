@@ -1,3 +1,5 @@
+import { ScaleAnchor } from '../article/enums/ScaleAnchor';
+
 export type KeyframeAny = Keyframe<KeyframeType>;
 
 export interface Keyframe<T extends KeyframeType> {
@@ -18,7 +20,8 @@ export enum KeyframeType {
   BorderWidth = 'border-width',
   Color = 'color',
   BorderColor = 'border-color',
-  Opacity = 'opacity'
+  Opacity = 'opacity',
+  Scale = 'scale'
 }
 
 export interface KeyframeValueMap {
@@ -30,6 +33,7 @@ export interface KeyframeValueMap {
   [KeyframeType.Color]: ColorValue;
   [KeyframeType.BorderColor]: BorderColorValue;
   [KeyframeType.Opacity]: OpacityValue;
+  [KeyframeType.Scale]: ScaleValue;
 }
 
 interface DimensionsValue {
@@ -64,4 +68,8 @@ interface BorderColorValue {
 
 interface OpacityValue {
   opacity: number;
+}
+
+interface ScaleValue {
+  scale: number;
 }

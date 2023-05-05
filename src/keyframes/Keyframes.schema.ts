@@ -3,6 +3,7 @@ import { KeyframeType } from './Keyframes';
 
 const KeyframesBaseSchema = z.object({
   id: z.string().min(1),
+  // TODO remove because it's only used on the infrastructure level
   articleId: z.string().min(1),
   layoutId: z.string().min(1),
   itemId: z.string().min(1),
@@ -67,6 +68,13 @@ const OpacityKeyframeSchema = KeyframesBaseSchema.extend({
   })
 });
 
+const ScaleKeyframeSchema = KeyframesBaseSchema.extend({
+  type: z.literal(KeyframeType.Scale),
+  value: z.object({
+    scale: z.number().nonnegative()
+  })
+});
+
 export const KeyframeSchema = z.discriminatedUnion('type', [
   DimensionsKeyframeSchema,
   PositionKeyframeSchema,
@@ -75,7 +83,8 @@ export const KeyframeSchema = z.discriminatedUnion('type', [
   BorderWidthKeyframeSchema,
   ColorKeyframeSchema,
   BorderColorKeyframeSchema,
-  OpacityKeyframeSchema
+  OpacityKeyframeSchema,
+  ScaleKeyframeSchema
 ]);
 
 export const KeyframesSchema = z.array(KeyframeSchema);
