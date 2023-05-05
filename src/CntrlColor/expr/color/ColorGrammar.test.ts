@@ -56,4 +56,18 @@ describe('ColorGrammar', () => {
       expect(wAlpha.value.a).toBeCloseTo(0.3);
     }
   });
+
+  it('should parse float with exponent', () => {
+    const parse = ColorParser();
+    const color  = parse('oklch(0.7434407216494845 1.2886597938144328e-7 0 / 1)', 0);
+    expect(color.isOk).toBe(true);
+    const result = color.unwrap();
+    expect(result.type).toBe('oklch');
+    if (result.type === 'oklch') {
+      expect(result.value.l).toBeCloseTo(0.7434407216494845);
+      expect(result.value.c).toBeCloseTo(1.2886597938144328e-7);
+      expect(result.value.h).toBeCloseTo(0);
+      expect(result.value.a).toBeCloseTo(1);
+    }
+  });
 });
