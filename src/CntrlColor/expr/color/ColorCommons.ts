@@ -8,7 +8,7 @@ import { Token } from '../Token';
  */
 type CssNumberToken = Token<'number', number>;
 export function CssNumber(): Parser<CssNumberToken> {
-  const parse = Regex(/[+-]?(?:\d*\.\d|\d)\d*/);
+  const parse = Regex(/[+-]?(?:\d*\.\d|\d)\d*(?:[eE][+-]?\d+)?/);
   const parseCssNumber: Parser<CssNumberToken> = (src, index) => parse(src, index).map(t => t.produce({
     type: 'number',
     value: parseFloat(t.value[0])
