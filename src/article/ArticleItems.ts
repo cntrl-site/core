@@ -11,6 +11,7 @@ export interface Item<T extends ArticleItemType> {
   area: Record<LayoutIdentifier, ItemArea>;
   visible: Record<LayoutIdentifier, boolean>;
   link?: Link;
+  sticky: Record<LayoutIdentifier, StickyParams | null>;
   commonParams: ItemCommonParamsMap[T];
   layoutParams: Record<LayoutIdentifier, ItemLayoutParamsMap[T]>;
 }
@@ -77,24 +78,20 @@ interface YoutubeEmbedCommonParams {
   ratioLock: boolean;
 }
 
-interface ItemBaseLayoutParams {
-  sticky: StickyParams | null;
-}
-
-interface MediaLayoutParams extends ItemBaseLayoutParams {
+interface MediaLayoutParams {
   opacity: number;
   radius: number;
   strokeWidth: number;
   strokeColor: string;
 }
 
-interface CustomLayoutParams extends ItemBaseLayoutParams {}
+interface CustomLayoutParams {}
 
-interface VimeoEmbedLayoutParams extends ItemBaseLayoutParams {
+interface VimeoEmbedLayoutParams {
   radius: number;
 }
 
-interface YoutubeEmbedLayoutParams extends ItemBaseLayoutParams {
+interface YoutubeEmbedLayoutParams {
   radius: number;
 }
 
@@ -104,7 +101,7 @@ interface VideoLayoutParams extends MediaLayoutParams {
   autoplay: boolean;
 }
 
-interface RichTextLayoutParams extends ItemBaseLayoutParams {
+interface RichTextLayoutParams {
   preset: string | null;
   styles?: RichTextStyle[];
   textAlign: TextAlign;
@@ -112,7 +109,7 @@ interface RichTextLayoutParams extends ItemBaseLayoutParams {
   sizing: string;
 }
 
-interface RectangleLayoutParams extends ItemBaseLayoutParams {
+interface RectangleLayoutParams {
   radius: number;
   strokeWidth: number;
   fillColor: string;
