@@ -34,7 +34,8 @@ export type {
   VimeoEmbedItem as TVimeoEmbedItem,
   YoutubeEmbedItem as TYoutubeEmbedItem,
   ItemCommonParamsMap as TItemCommonParamsMap,
-  ItemLayoutParamsMap as TItemLayoutParamsMap
+  ItemLayoutParamsMap as TItemLayoutParamsMap,
+  StickyParams as TStickyParams
 } from './article/ArticleItems';
 export { isItemType } from './article/ArticleItems';
 export type { LayoutGrid as TLayoutGrid, Grid as TGrid } from './grid/Grid';

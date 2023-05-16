@@ -10,12 +10,14 @@ const ImageItemSchema = ItemBaseSchema.extend({
     url: z.string().min(1),
     ratioLock: z.boolean()
   }),
+  sticky: z.record(
+    z.object({
+      from: z.number(),
+      to: z.number().optional()
+    }).nullable(),
+  ),
   layoutParams: z.record(
     z.object({
-      sticky: z.object({
-        from: z.number(),
-        to: z.number().optional()
-      }).nullable(),
       opacity: z.number().nonnegative(),
       radius: z.number(),
       strokeWidth: z.number(),
@@ -30,12 +32,14 @@ const VideoItemSchema = ItemBaseSchema.extend({
     url: z.string().min(1),
     ratioLock: z.boolean()
   }),
+  sticky: z.record(
+    z.object({
+      from: z.number(),
+      to: z.number().optional()
+    }).nullable(),
+  ),
   layoutParams: z.record(
     z.object({
-      sticky: z.object({
-        from: z.number(),
-        to: z.number().optional()
-      }).nullable(),
       autoplay: z.boolean(),
       opacity: z.number().nonnegative(),
       radius: z.number(),
@@ -50,12 +54,14 @@ const RectangleItemSchema = ItemBaseSchema.extend({
   commonParams: z.object({
     ratioLock: z.boolean()
   }),
+  sticky: z.record(
+    z.object({
+      from: z.number(),
+      to: z.number().optional()
+    }).nullable(),
+  ),
   layoutParams: z.record(
     z.object({
-      sticky: z.object({
-        from: z.number(),
-        to: z.number().optional()
-      }).nullable(),
       radius: z.number(),
       strokeWidth: z.number(),
       fillColor: z.string().min(1),
@@ -70,12 +76,13 @@ const CustomItemSchema = ItemBaseSchema.extend({
     ratioLock: z.boolean(),
     name: z.string()
   }),
-  layoutParams: z.record(z.object({
-    sticky: z.object({
+  sticky: z.record(
+    z.object({
       from: z.number(),
       to: z.number().optional()
-    }).nullable()
-  }))
+    }).nullable(),
+  ),
+  layoutParams: z.record(z.object({}))
 }) satisfies ZodType<CustomItem>;
 
 const VimeoEmbedItemSchema = ItemBaseSchema.extend({
@@ -89,13 +96,15 @@ const VimeoEmbedItemSchema = ItemBaseSchema.extend({
     url: z.string().min(1),
     ratioLock: z.boolean()
   }),
+  sticky: z.record(
+    z.object({
+      from: z.number(),
+      to: z.number().optional()
+    }).nullable(),
+  ),
   layoutParams: z.record(
     z.object({
-      radius: z.number(),
-      sticky: z.object({
-        from: z.number(),
-        to: z.number().optional()
-      }).nullable()
+      radius: z.number()
     })
   )
 }) satisfies ZodType<VimeoEmbedItem>;
@@ -109,13 +118,15 @@ const YoutubeEmbedItemSchema = ItemBaseSchema.extend({
     url: z.string().min(1),
     ratioLock: z.boolean()
   }),
+  sticky: z.record(
+    z.object({
+      from: z.number(),
+      to: z.number().optional()
+    }).nullable(),
+  ),
   layoutParams: z.record(
     z.object({
-      radius: z.number(),
-      sticky: z.object({
-        from: z.number(),
-        to: z.number().optional()
-      }).nullable()
+      radius: z.number()
     })
   )
 }) satisfies ZodType<YoutubeEmbedItem>;

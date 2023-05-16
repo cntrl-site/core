@@ -37,17 +37,19 @@ export const RichTextItemSchema = ItemBaseSchema.extend({
     blocks: z.array(RichTextBlock).optional(),
     styles: z.array(RichTextStyle).optional()
   }),
+  sticky: z.record(
+    z.object({
+      from: z.number(),
+      to: z.number().optional()
+    }).nullable(),
+  ),
   layoutParams: z.record(
     z.object({
       preset: z.string().nullable(),
       styles: z.array(RichTextStyle).optional(),
       textAlign: z.nativeEnum(TextAlign),
       lineHeightLock: z.boolean(),
-      sizing: z.string(),
-      sticky: z.object({
-        from: z.number(),
-        to: z.number().optional()
-      }).nullable()
+      sizing: z.string()
     })
   )
 }) satisfies ZodType<RichTextItem>;
