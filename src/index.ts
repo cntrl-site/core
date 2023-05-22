@@ -59,6 +59,9 @@ export type {
 
 // Schemas
 export { ArticleSchema } from './article/Article.schema';
+export { ItemSchema } from './article/ArticleItems.schema';
+export { ItemAreaSchema } from './article/ItemArea.schema';
+export { SectionSchema, SectionHeightSchema } from './article/Section.schema';
 export { ProjectSchema } from './project/Project.schema';
 export { CustomFont } from './project/Fonts.schema';
 export { LayoutSchema } from './layout/Layout.schema';
@@ -67,6 +70,7 @@ export { PageSchema } from './page/Page.schema';
 export { PaletteSchema } from './palette/Palette.schema';
 export { ColorSchema } from './palette/Color.schema';
 export { TypePresetsSchema } from './typePresets/TypePresets.schema';
+export { RichTextEntitySchema, RichTextBlockSchema, RichTextStyleSchema } from './article/RichTextItem.schema'
 export { TypePresetEntrySchema } from './typePresets/TypePresetEntry.schema';
 export { KeyframesSchema, KeyframeSchema } from './keyframes/Keyframes.schema';
 
