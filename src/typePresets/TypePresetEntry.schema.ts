@@ -14,4 +14,4 @@ export const TypePresetEntrySchema = z.object({
   wordSpacing: z.number(),
   color: z.string(),
   status: z.nativeEnum(TypePresetStatus)
-}) satisfies  ZodType<TypePresetEntry>;
+}) satisfies ZodType<TypePresetEntry>;
