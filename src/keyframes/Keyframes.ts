@@ -8,7 +8,6 @@ export interface Keyframe<T extends KeyframeType> {
   itemId: string;
   position: number;
   value: KeyframeValueMap[T];
-  sectionId: string;
 }
 
 export enum KeyframeType {
