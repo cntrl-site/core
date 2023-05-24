@@ -131,7 +131,7 @@ const YoutubeEmbedItemSchema = ItemBaseSchema.extend({
   )
 }) satisfies ZodType<YoutubeEmbedItem>;
 
-export const Item = z.discriminatedUnion('type', [
+export const ItemSchema = z.discriminatedUnion('type', [
   ImageItemSchema,
   VideoItemSchema,
   RectangleItemSchema,

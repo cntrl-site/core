@@ -2,7 +2,7 @@ import { z, ZodType } from 'zod';
 import { TypePresetEntry } from './TypePresetEntry';
 import { TypePresetStatus } from './TypePresetStatus';
 
-export const TypePresetEntrySchema: ZodType<TypePresetEntry> = z.object({
+export const TypePresetEntrySchema = z.object({
   id: z.string(),
   name: z.string(),
   fontFamily: z.string(),
@@ -14,4 +14,4 @@ export const TypePresetEntrySchema: ZodType<TypePresetEntry> = z.object({
   wordSpacing: z.number(),
   color: z.string(),
   status: z.nativeEnum(TypePresetStatus)
-});
+}) satisfies ZodType<TypePresetEntry>;
