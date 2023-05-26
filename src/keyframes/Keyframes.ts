@@ -1,5 +1,3 @@
-import { ScaleAnchor } from '../article/enums/ScaleAnchor';
-
 export type KeyframeAny = Keyframe<KeyframeType>;
 
 export interface Keyframe<T extends KeyframeType> {
