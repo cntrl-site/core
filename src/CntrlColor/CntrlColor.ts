@@ -1,6 +1,6 @@
 /// <reference lib="dom" />
 import { ColorParser } from './expr/color/ColorGrammar';
-import { oklchToRgb, rgbToOklch } from './colorConvertors';
+import { oklchToRgb, rgbToOklch } from './colorConverters';
 
 interface RgbaColorData {
   type: 'rgba';
@@ -158,10 +158,14 @@ export class OklchColor extends CntrlColor {
   }
 
   public toCss(): string {
-    if (typeof window === 'undefined' || !window.CSS.supports('color: oklch(42 0.3 90 / 1)')) {
-      return this.fmt('rgba');
+    if (typeof window === 'undefined') {
+      return this.fmt('oklch');
     }
-    return this.fmt('oklch');
+    return this.fmt(
+      window.CSS.supports('color: oklch(42 0.3 90 / 1)')
+        ? 'oklch'
+        : 'rgba'
+    );
   }
 
   public getOklch(): OklchColorData {

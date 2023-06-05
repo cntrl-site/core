@@ -1,4 +1,4 @@
-export const ConvertErs = 0.0001;
+export const Converters = 0.0001;
 
 export function rgbToOklch(r: number, g: number, b: number, a: number = 1) {
   let lab = linear_srgb_to_oklab(
@@ -21,7 +21,7 @@ function srgbTransferFunction(a: number) {
 }
 
 export function clamp(x: number) {
-  return x < ConvertErs ? ConvertErs : (x > 1 - ConvertErs ? 1 - ConvertErs : x);
+  return x < Converters ? Converters : (x > 1 - Converters ? 1 - Converters : x);
 }
 
 export function oklchToRgb(l: number, c: number, h: number, alpha: number = 1) {
