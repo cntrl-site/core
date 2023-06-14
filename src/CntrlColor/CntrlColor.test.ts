@@ -36,7 +36,7 @@ describe('CntrlColor', () => {
     const cntrlColor = CntrlColor.parse(color);
     expect(cntrlColor).toBeInstanceOf(CntrlColor);
     expect(cntrlColor.getOklch()).toEqual({ type: 'oklch', l: 0.6, c: 0.1, h: 120, a: 1 });
-    expect(cntrlColor.fmt('oklch')).toBe(color);
+    expect(cntrlColor.fmt('oklch')).toBe('oklch(60% 0.1 120 / 1)');
     expect(cntrlColor.fmt('rgba')).toBe('rgba(121, 137, 64, 1)');
     expect(cntrlColor.fmt('hex').toLowerCase()).toBe('#798940');
   });
@@ -63,15 +63,15 @@ describe('CntrlColor', () => {
     expect(cntrlColor2.toCss()).toBe('rgba(40, 51, 2, 0.5)');
   });
   it('mix from current color to provided color in range between 0 - 1', () => {
-    const currentColor = 'oklch(0.3 0.02 100 / 1)';
-    const targetColor = 'oklch(0.1 0.01 40 / 0.5)';
+    const currentColor = 'oklch(30% 0.02 100 / 1)';
+    const targetColor = 'oklch(10% 0.01 40 / 0.5)';
     const currentCntrlColor = CntrlColor.parse(currentColor);
     const targetCntrlColor = CntrlColor.parse(targetColor);
     const result1 = currentCntrlColor.mix(targetCntrlColor, 0);
     const result2 = currentCntrlColor.mix(targetCntrlColor, 0.5);
     const result3 = currentCntrlColor.mix(targetCntrlColor, 1);
     expect(result1.fmt('oklch')).toBe(currentColor);
-    expect(result2.fmt('oklch')).toBe('oklch(0.2 0.015 70 / 0.75)');
+    expect(result2.fmt('oklch')).toBe('oklch(20% 0.015 70 / 0.75)');
     expect(result3.fmt('oklch')).toBe(targetColor);
   });
 });

@@ -91,7 +91,7 @@ export class RgbaColor extends CntrlColor {
       case 'hex': return this.getHex();
       case 'oklch': {
         const { l, c, h, a } = this.getOklch();
-        return `oklch(${l} ${c} ${h} / ${alpha ?? a})`;
+        return `oklch(${l * 100}% ${c} ${h} / ${alpha ?? a})`;
       }
       default: return `rgba(${this.red}, ${this.green}, ${this.blue}, ${alpha ?? this.alpha})`;
     }
@@ -153,7 +153,7 @@ export class OklchColor extends CntrlColor {
         const { r, g, b, a } = this.getRgba();
         return `rgba(${r}, ${g}, ${b}, ${alpha ?? a})`;
       }
-      default: return `oklch(${this.lightness} ${this.chroma} ${this.hue} / ${alpha ?? this.alpha})`;
+      default: return `oklch(${this.lightness * 100}% ${this.chroma} ${this.hue} / ${alpha ?? this.alpha})`;
     }
   }
 
@@ -162,7 +162,7 @@ export class OklchColor extends CntrlColor {
       return this.fmt('oklch');
     }
     return this.fmt(
-      window.CSS.supports('color: oklch(42 0.3 90 / 1)')
+      window.CSS.supports('color: oklch(42% 0.3 90 / 1)')
         ? 'oklch'
         : 'rgba'
     );
