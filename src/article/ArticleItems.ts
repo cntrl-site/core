@@ -11,6 +11,7 @@ export interface Item<T extends ArticleItemType> {
   area: Record<LayoutIdentifier, ItemArea>;
   visible: Record<LayoutIdentifier, boolean>;
   link?: Link;
+  isLocked?: boolean;
   sticky: Record<LayoutIdentifier, StickyParams | null>;
   commonParams: ItemCommonParamsMap[T];
   layoutParams: Record<LayoutIdentifier, ItemLayoutParamsMap[T]>;
