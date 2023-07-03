@@ -14,6 +14,7 @@ export const ItemBaseSchema = z.object({
   id: z.string().min(1),
   area: z.record(ItemAreaSchema),
   visible: z.record(z.boolean()),
+  isLocked: z.boolean().optional(),
   link: Link.optional(),
   commonParams: CommonParamsBase,
   layoutParams: z.record(z.any()).optional()
