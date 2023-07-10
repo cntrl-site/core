@@ -9,7 +9,7 @@ export interface Item<T extends ArticleItemType> {
   id: string;
   type: T;
   area: Record<LayoutIdentifier, ItemArea>;
-  visible: Record<LayoutIdentifier, boolean>;
+  hidden: Record<LayoutIdentifier, boolean>;
   link?: Link;
   isLocked?: boolean;
   sticky: Record<LayoutIdentifier, StickyParams | null>;
