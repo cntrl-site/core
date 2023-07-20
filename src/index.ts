@@ -56,6 +56,7 @@ export type {
   KeyframeValueMap as TKeyframeValueMap,
   Keyframe as TKeyframe
 } from './keyframes/Keyframes';
+export type { ItemState as TItemState, ItemHoverStatesMap as TItemHoverStatesMap } from './article/ItemState';
 
 // Schemas
 export { ArticleSchema } from './article/Article.schema';

@@ -2,6 +2,7 @@ import { ArticleItemType } from './enums/ArticleItemType';
 import { ItemArea } from './ItemArea';
 import { RichTextBlock, RichTextStyle } from './RichText';
 import { TextAlign } from './enums/TextAlign';
+import { ItemState } from './ItemState';
 
 export type ItemAny = Item<ArticleItemType>;
 
@@ -15,6 +16,7 @@ export interface Item<T extends ArticleItemType> {
   label?: string;
   sticky: Record<LayoutIdentifier, StickyParams | null>;
   commonParams: ItemCommonParamsMap[T];
+  state: ItemState<T>;
   layoutParams: Record<LayoutIdentifier, ItemLayoutParamsMap[T]>;
 }
 

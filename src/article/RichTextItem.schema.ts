@@ -4,6 +4,7 @@ import { RichTextBlock as TRichTextBlock } from './RichText';
 import { ItemBaseSchema } from './ItemBase.schema';
 import { TextAlign } from './enums/TextAlign';
 import { RichTextItem } from './ArticleItems';
+import { RichTextStateParamsSchema } from './ItemStateSchema';
 
 export const RichTextEntitySchema = z.object({
   start: z.number().nonnegative(),
@@ -51,5 +52,6 @@ export const RichTextItemSchema = ItemBaseSchema.extend({
       lineHeightLock: z.boolean(),
       sizing: z.string()
     })
-  )
+  ),
+  state: RichTextStateParamsSchema
 }) satisfies ZodType<RichTextItem>;
