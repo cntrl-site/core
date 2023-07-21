@@ -4,7 +4,7 @@ import { RichTextBlock as TRichTextBlock } from './RichText';
 import { ItemBaseSchema } from './ItemBase.schema';
 import { TextAlign } from './enums/TextAlign';
 import { RichTextItem } from './ArticleItems';
-import { RichTextStateParamsSchema } from './ItemStateSchema';
+import { RichTextHoverStateParamsSchema } from './ItemStateSchema';
 
 export const RichTextEntitySchema = z.object({
   start: z.number().nonnegative(),
@@ -53,5 +53,7 @@ export const RichTextItemSchema = ItemBaseSchema.extend({
       sizing: z.string()
     })
   ),
-  state: RichTextStateParamsSchema
+  state: z.object({
+    hover: RichTextHoverStateParamsSchema
+  })
 }) satisfies ZodType<RichTextItem>;

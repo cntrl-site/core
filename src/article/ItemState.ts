@@ -6,18 +6,20 @@ export interface ItemState<T extends ArticleItemType> {
   hover: Record<LayoutIdentifier, ItemHoverStatesMap[T]>;
 }
 
+export type ItemHoverState = ItemHoverStatesMap[ArticleItemType];
+
 export interface ItemHoverStatesMap {
-  [ArticleItemType.Image]: MediaStateParams;
-  [ArticleItemType.Video]: MediaStateParams;
-  [ArticleItemType.RichText]: RichTextStateParams;
-  [ArticleItemType.Rectangle]: RectangleStateParams;
-  [ArticleItemType.VimeoEmbed]: EmbedStateParams;
-  [ArticleItemType.YoutubeEmbed]: EmbedStateParams;
-  [ArticleItemType.Custom]: CustomStateParams;
+  [ArticleItemType.Image]: MediaHoverStateParams;
+  [ArticleItemType.Video]: MediaHoverStateParams;
+  [ArticleItemType.RichText]: RichTextHoverStateParams;
+  [ArticleItemType.Rectangle]: RectangleHoverStateParams;
+  [ArticleItemType.VimeoEmbed]: EmbedHoverStateParams;
+  [ArticleItemType.YoutubeEmbed]: EmbedHoverStateParams;
+  [ArticleItemType.Custom]: CustomHoverStateParams;
 }
 
 interface HoverParams<T> {
-  ease: string;
+  timing: string;
   duration: number;
   delay: number;
   value: T;
@@ -32,24 +34,24 @@ interface ItemHoversBaseMap {
   scale?:  HoverParams<number>;
 }
 
-export interface MediaStateParams extends ItemHoversBaseMap {
+export interface MediaHoverStateParams extends ItemHoversBaseMap {
   opacity?: HoverParams<number>;
   radius?: HoverParams<number>;
   strokeWidth?: HoverParams<number>;
   strokeColor?: HoverParams<string>;
 }
 
-interface RichTextStateParams extends ItemHoversBaseMap {}
+export interface RichTextHoverStateParams extends ItemHoversBaseMap {}
 
-interface RectangleStateParams extends ItemHoversBaseMap {
+export interface RectangleHoverStateParams extends ItemHoversBaseMap {
   radius?: HoverParams<number>;
   strokeWidth?: HoverParams<number>;
   fillColor?: HoverParams<string>;
   strokeColor?: HoverParams<string>;
 }
 
-interface EmbedStateParams extends ItemHoversBaseMap {
+export interface EmbedHoverStateParams extends ItemHoversBaseMap {
   radius?: HoverParams<number>;
 }
 
-interface CustomStateParams extends ItemHoversBaseMap {}
+export interface CustomHoverStateParams extends ItemHoversBaseMap {}

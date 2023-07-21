@@ -1,10 +1,15 @@
 import { z, ZodType } from 'zod';
-import { ItemState } from './ItemState';
-import { ArticleItemType } from './enums/ArticleItemType';
+import {
+  CustomHoverStateParams,
+  EmbedHoverStateParams,
+  MediaHoverStateParams,
+  RectangleHoverStateParams,
+  RichTextHoverStateParams
+} from './ItemState';
 
 export const getHoverParamsSchema = <T extends z.ZodTypeAny>(schema: T) => {
   return z.object({
-    ease: z.string(),
+    timing: z.string(),
     duration: z.number(),
     delay: z.number(),
     value: schema
@@ -20,34 +25,37 @@ export const ItemHoverStateBaseSchema = z.object({
   scale: getHoverParamsSchema(z.number()).optional()
 });
 
-export const MediaStateParamsSchema = z.object({
-  hover: z.record(z.object({
+export const MediaHoverStateParamsSchema = z.record(
+  z.object({
     opacity: getHoverParamsSchema(z.number()).optional(),
     radius: getHoverParamsSchema(z.number()).optional(),
     strokeWidth: getHoverParamsSchema(z.number()).optional(),
     strokeColor: getHoverParamsSchema(z.string()).optional()
-  }).merge(ItemHoverStateBaseSchema))
-}) satisfies ZodType<ItemState<ArticleItemType.Image | ArticleItemType.Video>>;
+  })
+  .merge(ItemHoverStateBaseSchema)
+) satisfies ZodType<MediaHoverStateParams>;
 
-export const RectangleStateParamsSchema = z.object({
-  hover: z.record(z.object({
+export const RectangleHoverStateParamsSchema = z.record(
+  z.object({
     strokeWidth: getHoverParamsSchema(z.number()).optional(),
     radius: getHoverParamsSchema(z.number()).optional(),
     fillColor: getHoverParamsSchema(z.string()).optional(),
     strokeColor: getHoverParamsSchema(z.string()).optional()
-  }).merge(ItemHoverStateBaseSchema))
-}) satisfies ZodType<ItemState<ArticleItemType.Rectangle>>;
+  }).merge(ItemHoverStateBaseSchema)
+) satisfies ZodType<RectangleHoverStateParams>;
 
-export const CustomItemStateParamsSchema = z.object({
-  hover: z.record(ItemHoverStateBaseSchema)
-}) satisfies ZodType<ItemState<ArticleItemType.Custom>>;
+export const CustomItemHoverStateParamsSchema = z.record(ItemHoverStateBaseSchema) satisfies ZodType<CustomHoverStateParams>;
 
-export const EmbedStateParamsSchema = z.object({
-  hover: z.record(z.object({
+export const EmbedHoverStateParamsSchema = z.record(z.object({
     radius: getHoverParamsSchema(z.number()).optional()
-  }).merge(ItemHoverStateBaseSchema))
-}) satisfies ZodType<ItemState<ArticleItemType.YoutubeEmbed | ArticleItemType.VimeoEmbed>>;
+  }).merge(ItemHoverStateBaseSchema)
+) satisfies ZodType<EmbedHoverStateParams>;
 
-export const RichTextStateParamsSchema = z.object({
-  hover: z.record(ItemHoverStateBaseSchema)
-}) satisfies ZodType<ItemState<ArticleItemType.Custom>>;
+export const RichTextHoverStateParamsSchema = z.record(ItemHoverStateBaseSchema)satisfies ZodType<RichTextHoverStateParams>;
+export const ItemHoverStateParamsSchema = z.union([
+  MediaHoverStateParamsSchema,
+  RectangleHoverStateParamsSchema,
+  CustomItemHoverStateParamsSchema,
+  EmbedHoverStateParamsSchema,
+  RichTextHoverStateParamsSchema
+])
