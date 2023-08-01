@@ -18,7 +18,7 @@ export interface ItemHoverStatesMap {
   [ArticleItemType.Custom]: CustomHoverStateParams;
 }
 
-interface HoverParams<T> {
+export interface HoverParams<T> {
   timing: string;
   duration: number;
   delay: number;
@@ -52,6 +52,7 @@ export interface RectangleHoverStateParams extends ItemHoversBaseMap {
 
 export interface EmbedHoverStateParams extends ItemHoversBaseMap {
   radius?: HoverParams<number>;
+  autoPlay?: boolean;
 }
 
 export interface CustomHoverStateParams extends ItemHoversBaseMap {}

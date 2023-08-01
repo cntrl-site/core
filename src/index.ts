@@ -59,7 +59,8 @@ export type {
 export type {
   ItemState as TItemState,
   ItemHoverStatesMap as TItemHoverStatesMap,
-  ItemHoverState as TItemHoverState
+  ItemHoverState as TItemHoverState,
+  HoverParams as THoverParams
 } from './article/ItemState';
 
 // Schemas
