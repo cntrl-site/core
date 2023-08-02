@@ -3,6 +3,12 @@ import { ItemBaseSchema } from './ItemBase.schema';
 import { ArticleItemType } from './enums/ArticleItemType';
 import { RichTextItemSchema } from './RichTextItem.schema';
 import { CustomItem, ImageItem, RectangleItem, VideoItem, VimeoEmbedItem, YoutubeEmbedItem } from './ArticleItems';
+import {
+  CustomItemHoverStateParamsSchema,
+  EmbedHoverStateParamsSchema,
+  MediaHoverStateParamsSchema,
+  RectangleHoverStateParamsSchema
+} from './ItemStateSchema';
 
 const ImageItemSchema = ItemBaseSchema.extend({
   type: z.literal(ArticleItemType.Image),
@@ -23,7 +29,10 @@ const ImageItemSchema = ItemBaseSchema.extend({
       strokeWidth: z.number(),
       strokeColor: z.string()
     })
-  )
+  ),
+  state: z.object({
+    hover: z.record(MediaHoverStateParamsSchema)
+  })
 }) satisfies ZodType<ImageItem>;
 
 const VideoItemSchema = ItemBaseSchema.extend({
@@ -46,7 +55,10 @@ const VideoItemSchema = ItemBaseSchema.extend({
       strokeWidth: z.number(),
       strokeColor: z.string()
     })
-  )
+  ),
+  state: z.object({
+    hover: z.record(MediaHoverStateParamsSchema)
+  })
 }) satisfies ZodType<VideoItem>;
 
 const RectangleItemSchema = ItemBaseSchema.extend({
@@ -67,7 +79,10 @@ const RectangleItemSchema = ItemBaseSchema.extend({
       fillColor: z.string().min(1),
       strokeColor: z.string().min(1)
     })
-  )
+  ),
+  state: z.object({
+    hover: z.record(RectangleHoverStateParamsSchema)
+  })
 }) satisfies ZodType<RectangleItem>;
 
 const CustomItemSchema = ItemBaseSchema.extend({
@@ -82,7 +97,10 @@ const CustomItemSchema = ItemBaseSchema.extend({
       to: z.number().optional()
     }).nullable(),
   ),
-  layoutParams: z.record(z.object({}))
+  layoutParams: z.record(z.object({})),
+  state: z.object({
+    hover: z.record(CustomItemHoverStateParamsSchema)
+  })
 }) satisfies ZodType<CustomItem>;
 
 const VimeoEmbedItemSchema = ItemBaseSchema.extend({
@@ -106,7 +124,10 @@ const VimeoEmbedItemSchema = ItemBaseSchema.extend({
     z.object({
       radius: z.number()
     })
-  )
+  ),
+  state: z.object({
+    hover: z.record(EmbedHoverStateParamsSchema)
+  })
 }) satisfies ZodType<VimeoEmbedItem>;
 
 const YoutubeEmbedItemSchema = ItemBaseSchema.extend({
@@ -128,7 +149,10 @@ const YoutubeEmbedItemSchema = ItemBaseSchema.extend({
     z.object({
       radius: z.number()
     })
-  )
+  ),
+  state: z.object({
+    hover: z.record(EmbedHoverStateParamsSchema)
+  })
 }) satisfies ZodType<YoutubeEmbedItem>;
 
 export const ItemSchema = z.discriminatedUnion('type', [

@@ -56,6 +56,12 @@ export type {
   KeyframeValueMap as TKeyframeValueMap,
   Keyframe as TKeyframe
 } from './keyframes/Keyframes';
+export type {
+  ItemState as TItemState,
+  ItemHoverStatesMap as TItemHoverStatesMap,
+  ItemHoverState as TItemHoverState,
+  HoverParams as THoverParams
+} from './article/ItemState';
 
 // Schemas
 export { ArticleSchema } from './article/Article.schema';
@@ -73,6 +79,7 @@ export { TypePresetsSchema } from './typePresets/TypePresets.schema';
 export { RichTextEntitySchema, RichTextBlockSchema, RichTextStyleSchema } from './article/RichTextItem.schema'
 export { TypePresetEntrySchema } from './typePresets/TypePresetEntry.schema';
 export { KeyframesSchema, KeyframeSchema } from './keyframes/Keyframes.schema';
+export { ItemHoverStateParamsSchema } from './article/ItemStateSchema';
 
 // Utils
 export { getClosestLayoutValue, getLayoutMediaQuery } from './article/utils/layouts';
