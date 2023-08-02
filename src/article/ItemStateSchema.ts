@@ -45,15 +45,15 @@ export const CustomItemHoverStateParamsSchema = ItemHoverStateBaseSchema satisfi
 
 export const EmbedHoverStateParamsSchema = z.object({
     radius: getHoverParamsSchema(z.number()),
-    autoPlay: z.boolean().optional()
+    autoplay: z.boolean().optional()
   }).merge(ItemHoverStateBaseSchema) satisfies ZodType<EmbedHoverStateParams>;
 
 export const RichTextHoverStateParamsSchema = ItemHoverStateBaseSchema satisfies ZodType<RichTextHoverStateParams>;
 
 export const ItemHoverStateParamsSchema = z.union([
+  EmbedHoverStateParamsSchema,
   MediaHoverStateParamsSchema,
   RectangleHoverStateParamsSchema,
-  CustomItemHoverStateParamsSchema,
-  EmbedHoverStateParamsSchema,
-  RichTextHoverStateParamsSchema
+  RichTextHoverStateParamsSchema,
+  CustomItemHoverStateParamsSchema
 ]);

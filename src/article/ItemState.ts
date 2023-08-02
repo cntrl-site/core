@@ -52,7 +52,7 @@ export interface RectangleHoverStateParams extends ItemHoversBaseMap {
 
 export interface EmbedHoverStateParams extends ItemHoversBaseMap {
   radius?: HoverParams<number>;
-  autoPlay?: boolean;
+  autoplay?: boolean;
 }
 
 export interface CustomHoverStateParams extends ItemHoversBaseMap {}
