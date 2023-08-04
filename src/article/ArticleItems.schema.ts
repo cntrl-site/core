@@ -106,7 +106,7 @@ const CustomItemSchema = ItemBaseSchema.extend({
 const VimeoEmbedItemSchema = ItemBaseSchema.extend({
   type: z.literal(ArticleItemType.VimeoEmbed),
   commonParams: z.object({
-    autoplay: z.boolean(),
+    play: z.union([z.literal('on-hover'), z.literal('on-click'), z.literal('auto')]),
     controls: z.boolean(),
     loop: z.boolean(),
     muted: z.boolean(),
@@ -133,7 +133,7 @@ const VimeoEmbedItemSchema = ItemBaseSchema.extend({
 const YoutubeEmbedItemSchema = ItemBaseSchema.extend({
   type: z.literal(ArticleItemType.YoutubeEmbed),
   commonParams: z.object({
-    autoplay: z.boolean(),
+    play: z.union([z.literal('on-hover'), z.literal('on-click'), z.literal('auto')]),
     controls: z.boolean(),
     loop: z.boolean(),
     url: z.string().min(1),
