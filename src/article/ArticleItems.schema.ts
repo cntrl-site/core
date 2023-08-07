@@ -133,7 +133,7 @@ const VimeoEmbedItemSchema = ItemBaseSchema.extend({
 const YoutubeEmbedItemSchema = ItemBaseSchema.extend({
   type: z.literal(ArticleItemType.YoutubeEmbed),
   commonParams: z.object({
-    play: z.union([z.literal('on-hover'), z.literal('on-click'), z.literal('auto')]),
+    play: z.enum(['on-hover', 'on-click', 'auto']),
     controls: z.boolean(),
     loop: z.boolean(),
     url: z.string().min(1),
