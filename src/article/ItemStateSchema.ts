@@ -44,8 +44,7 @@ export const RectangleHoverStateParamsSchema = z.object({
 export const CustomItemHoverStateParamsSchema = ItemHoverStateBaseSchema satisfies ZodType<CustomHoverStateParams>;
 
 export const EmbedHoverStateParamsSchema = z.object({
-    radius: getHoverParamsSchema(z.number()),
-    autoplay: z.boolean().optional()
+    radius: getHoverParamsSchema(z.number())
   }).merge(ItemHoverStateBaseSchema) satisfies ZodType<EmbedHoverStateParams>;
 
 export const RichTextHoverStateParamsSchema = ItemHoverStateBaseSchema satisfies ZodType<RichTextHoverStateParams>;
