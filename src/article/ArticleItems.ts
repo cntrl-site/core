@@ -65,7 +65,7 @@ interface CustomCommonParams {
 }
 
 interface VimeoEmbedCommonParams {
-  autoplay: boolean;
+  play: 'on-hover' | 'on-click' | 'auto';
   controls: boolean;
   loop: boolean;
   muted: boolean;
@@ -75,7 +75,7 @@ interface VimeoEmbedCommonParams {
 }
 
 interface YoutubeEmbedCommonParams {
-  autoplay: boolean;
+  play: 'on-hover' | 'on-click' | 'auto';
   controls: boolean;
   loop: boolean;
   url: string;
