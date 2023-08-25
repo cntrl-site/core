@@ -75,6 +75,20 @@ const ScaleKeyframeSchema = KeyframesBaseSchema.extend({
   })
 });
 
+const BlurKeyframeSchema = KeyframesBaseSchema.extend({
+  type: z.literal(KeyframeType.Blur),
+  value: z.object({
+    blur: z.number()
+  })
+});
+
+const BackdropBlurKeyframeSchema = KeyframesBaseSchema.extend({
+  type: z.literal(KeyframeType.BackdropBlur),
+  value: z.object({
+    backdropBlur: z.number()
+  })
+});
+
 export const KeyframeSchema = z.discriminatedUnion('type', [
   DimensionsKeyframeSchema,
   PositionKeyframeSchema,
@@ -84,7 +98,9 @@ export const KeyframeSchema = z.discriminatedUnion('type', [
   ColorKeyframeSchema,
   BorderColorKeyframeSchema,
   OpacityKeyframeSchema,
-  ScaleKeyframeSchema
+  ScaleKeyframeSchema,
+  BlurKeyframeSchema,
+  BackdropBlurKeyframeSchema
 ]);
 
 export const KeyframesSchema = z.array(KeyframeSchema);

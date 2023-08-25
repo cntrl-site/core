@@ -32,6 +32,7 @@ interface ItemHoversBaseMap {
   top?:  HoverParams<number>;
   left?:  HoverParams<number>;
   scale?:  HoverParams<number>;
+  blur?: HoverParams<number>;
 }
 
 export interface MediaHoverStateParams extends ItemHoversBaseMap {
@@ -48,6 +49,7 @@ export interface RectangleHoverStateParams extends ItemHoversBaseMap {
   strokeWidth?: HoverParams<number>;
   fillColor?: HoverParams<string>;
   strokeColor?: HoverParams<string>;
+  backdropBlur?: HoverParams<number>;
 }
 
 export interface EmbedHoverStateParams extends ItemHoversBaseMap {

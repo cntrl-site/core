@@ -50,7 +50,8 @@ export const RichTextItemSchema = ItemBaseSchema.extend({
       styles: z.array(RichTextStyleSchema).optional(),
       textAlign: z.nativeEnum(TextAlign),
       lineHeightLock: z.boolean(),
-      sizing: z.string()
+      sizing: z.string(),
+      blur: z.number()
     })
   ),
   state: z.object({

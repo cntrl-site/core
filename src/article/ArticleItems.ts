@@ -87,16 +87,19 @@ interface MediaLayoutParams {
   radius: number;
   strokeWidth: number;
   strokeColor: string;
+  blur: number;
 }
 
 interface CustomLayoutParams {}
 
 interface VimeoEmbedLayoutParams {
   radius: number;
+  blur: number;
 }
 
 interface YoutubeEmbedLayoutParams {
   radius: number;
+  blur: number;
 }
 
 interface ImageLayoutParams extends MediaLayoutParams {}
@@ -111,6 +114,7 @@ interface RichTextLayoutParams {
   textAlign: TextAlign;
   lineHeightLock: boolean;
   sizing: string;
+  blur: number;
 }
 
 interface RectangleLayoutParams {
@@ -118,6 +122,9 @@ interface RectangleLayoutParams {
   strokeWidth: number;
   fillColor: string;
   strokeColor: string;
+  blur: number;
+  backdropBlur: number;
+  blurMode: 'default' | 'backdrop';
 }
 
 export interface StickyParams {

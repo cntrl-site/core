@@ -19,7 +19,9 @@ export enum KeyframeType {
   Color = 'color',
   BorderColor = 'border-color',
   Opacity = 'opacity',
-  Scale = 'scale'
+  Scale = 'scale',
+  Blur = 'blur',
+  BackdropBlur = 'backdrop-blur'
 }
 
 export interface KeyframeValueMap {
@@ -32,6 +34,8 @@ export interface KeyframeValueMap {
   [KeyframeType.BorderColor]: BorderColorValue;
   [KeyframeType.Opacity]: OpacityValue;
   [KeyframeType.Scale]: ScaleValue;
+  [KeyframeType.Blur]: BlurValue;
+  [KeyframeType.BackdropBlur]: BackdropBlurValue;
 }
 
 interface DimensionsValue {
@@ -70,4 +74,12 @@ interface OpacityValue {
 
 interface ScaleValue {
   scale: number;
+}
+
+interface BlurValue {
+  blur: number;
+}
+
+interface BackdropBlurValue {
+  backdropBlur: number;
 }
