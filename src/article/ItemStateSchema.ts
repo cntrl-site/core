@@ -22,7 +22,8 @@ export const ItemHoverStateBaseSchema = z.object({
   angle: getHoverParamsSchema(z.number()),
   top: getHoverParamsSchema(z.number()),
   left: getHoverParamsSchema(z.number()),
-  scale: getHoverParamsSchema(z.number())
+  scale: getHoverParamsSchema(z.number()),
+  blur: getHoverParamsSchema(z.number())
 });
 
 export const MediaHoverStateParamsSchema =
@@ -38,7 +39,8 @@ export const RectangleHoverStateParamsSchema = z.object({
     strokeWidth: getHoverParamsSchema(z.number()),
     radius: getHoverParamsSchema(z.number()),
     fillColor: getHoverParamsSchema(z.string()),
-    strokeColor: getHoverParamsSchema(z.string())
+    strokeColor: getHoverParamsSchema(z.string()),
+    backdropBlur: getHoverParamsSchema(z.number())
   }).merge(ItemHoverStateBaseSchema) satisfies ZodType<RectangleHoverStateParams>;
 
 export const CustomItemHoverStateParamsSchema = ItemHoverStateBaseSchema satisfies ZodType<CustomHoverStateParams>;

@@ -27,7 +27,8 @@ const ImageItemSchema = ItemBaseSchema.extend({
       opacity: z.number().nonnegative(),
       radius: z.number(),
       strokeWidth: z.number(),
-      strokeColor: z.string()
+      strokeColor: z.string(),
+      blur: z.number()
     })
   ),
   state: z.object({
@@ -53,7 +54,8 @@ const VideoItemSchema = ItemBaseSchema.extend({
       opacity: z.number().nonnegative(),
       radius: z.number(),
       strokeWidth: z.number(),
-      strokeColor: z.string()
+      strokeColor: z.string(),
+      blur: z.number()
     })
   ),
   state: z.object({
@@ -77,7 +79,10 @@ const RectangleItemSchema = ItemBaseSchema.extend({
       radius: z.number(),
       strokeWidth: z.number(),
       fillColor: z.string().min(1),
-      strokeColor: z.string().min(1)
+      strokeColor: z.string().min(1),
+      blur: z.number(),
+      backdropBlur: z.number(),
+      blurMode: z.enum(['default', 'backdrop'])
     })
   ),
   state: z.object({
@@ -122,7 +127,8 @@ const VimeoEmbedItemSchema = ItemBaseSchema.extend({
   ),
   layoutParams: z.record(
     z.object({
-      radius: z.number()
+      radius: z.number(),
+      blur: z.number()
     })
   ),
   state: z.object({
@@ -147,7 +153,8 @@ const YoutubeEmbedItemSchema = ItemBaseSchema.extend({
   ),
   layoutParams: z.record(
     z.object({
-      radius: z.number()
+      radius: z.number(),
+      blur: z.number()
     })
   ),
   state: z.object({
