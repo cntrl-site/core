@@ -102,7 +102,7 @@ export function Seq<Ps extends Parser[]>(
       }
       const token = res.unwrap();
       lastIndex = token.end();
-      if (!token.isIgnore) {
+      if (!token.isIgnore()) {
         items.push(token);
       }
     }
