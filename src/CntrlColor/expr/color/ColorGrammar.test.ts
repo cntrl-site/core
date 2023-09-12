@@ -29,10 +29,10 @@ describe('ColorGrammar', () => {
 
   it('should parse hex', () => {
     const parse = ColorParser();
-    expect(parse('#777', 0).isOk).toBe(true);
-    expect(parse('#424242', 0).isOk).toBe(true);
-    expect(parse('#42424242', 0).isOk).toBe(true);
-    expect(parse('#fffffg', 0).isOk).toBe(false);
+    expect(parse('#777', 0).isOk()).toBe(true);
+    expect(parse('#424242', 0).isOk()).toBe(true);
+    expect(parse('#42424242', 0).isOk()).toBe(true);
+    expect(parse('#fffffg', 0).isOk()).toBe(false);
   });
 
   it('should parse oklch', () => {
@@ -60,7 +60,7 @@ describe('ColorGrammar', () => {
   it('should parse float with exponent', () => {
     const parse = ColorParser();
     const color  = parse('oklch(0.7434407216494845 1.2886597938144328e-7 0 / 1)', 0);
-    expect(color.isOk).toBe(true);
+    expect(color.isOk()).toBe(true);
     const result = color.unwrap();
     expect(result.type).toBe('oklch');
     if (result.type === 'oklch') {

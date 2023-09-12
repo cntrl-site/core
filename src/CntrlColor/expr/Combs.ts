@@ -67,7 +67,7 @@ export function Alt<Ps extends Parser[]>(...parsers: [...Ps]): Parser<TokensOf<P
     const errors = [];
     for (const parse of parsers) {
       const res = parse(src, index);
-      if (res.isOk) {
+      if (res.isOk()) {
         return res;
       }
       errors.push(res.unwrapErr());
@@ -93,16 +93,16 @@ export function Seq<Ps extends Parser[]>(
         return Result.Err(new ParseError('Unexpected end of input', lastIndex));
       }
       const res = parse(src, lastIndex);
-      if (res.isErr) {
-        if (checkEnd && checkEnd(src, lastIndex).isOk) {
+      if (res.isErr()) {
+        if (checkEnd && checkEnd(src, lastIndex).isOk()) {
           break;
         } else {
           return res;
         }
       }
       const token = res.unwrap();
-      lastIndex = token.end;
-      if (!token.isIgnore) {
+      lastIndex = token.end();
+      if (!token.isIgnore()) {
         items.push(token);
       }
     }
@@ -129,23 +129,23 @@ export function List<T extends Token>(
     let lastIndex = index;
     while (lastIndex < src.length) {
       const itemRes = parseItem(src, lastIndex);
-      if (itemRes.isErr) {
+      if (itemRes.isErr()) {
         return Result.Err(itemRes.unwrapErr());
       }
       const itemToken = itemRes.unwrap();
       if (!itemToken.isIgnore) {
         items.push(itemToken);
       }
-      lastIndex = itemToken.end;
-      if (checkEnd && checkEnd(src, lastIndex).isOk) {
+      lastIndex = itemToken.end();
+      if (checkEnd && checkEnd(src, lastIndex).isOk()) {
         break;
       }
       if (parseDelim) {
         const delimRes = parseDelim(src, lastIndex);
-        if (delimRes.isErr) {
+        if (delimRes.isErr()) {
           break;
         }
-        lastIndex = delimRes.unwrap().end;
+        lastIndex = delimRes.unwrap().end();
       }
     }
     if (items.length === 0) {
