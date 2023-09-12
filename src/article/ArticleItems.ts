@@ -3,6 +3,9 @@ import { ItemArea } from './ItemArea';
 import { RichTextBlock, RichTextStyle } from './RichText';
 import { TextAlign } from './enums/TextAlign';
 import { ItemState } from './ItemState';
+import { TextTransform } from './enums/TextTransform';
+import { VerticalAlign } from './enums/VerticalAlign';
+import { TextDecoration } from './enums/TextDecoration';
 
 export type ItemAny = Item<ArticleItemType>;
 
@@ -52,7 +55,6 @@ interface ImageCommonParams extends MediaCommonParams {}
 interface RichTextCommonParams {
   text: string;
   blocks?: RichTextBlock[];
-  styles?: RichTextStyle[];
 }
 
 interface RectangleCommonParams {
@@ -110,11 +112,24 @@ interface VideoLayoutParams extends MediaLayoutParams {
 
 interface RichTextLayoutParams {
   preset: string | null;
-  styles?: RichTextStyle[];
+  rangeStyles?: RichTextStyle[];
   textAlign: TextAlign;
   lineHeightLock: boolean;
   sizing: string;
   blur: number;
+  // overall styles
+  // optional in case preset is present
+  fontSize?: number;
+  lineHeight?: number;
+  letterSpacing?: number;
+  wordSpacing?: number;
+  textTransform?: TextTransform;
+  verticalAlign?: VerticalAlign;
+  color?: string;
+  typeFace?: string;
+  fontStyle?: string;
+  fontWeight?: number;
+  textDecoration?: TextDecoration;
 }
 
 interface RectangleLayoutParams {
