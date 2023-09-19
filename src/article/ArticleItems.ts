@@ -117,19 +117,17 @@ interface RichTextLayoutParams {
   lineHeightLock: boolean;
   sizing: string;
   blur: number;
-  // overall styles
-  // optional in case preset is present
-  fontSize?: number;
-  lineHeight?: number;
-  letterSpacing?: number;
-  wordSpacing?: number;
-  textTransform?: TextTransform;
-  verticalAlign?: VerticalAlign;
-  color?: string;
-  typeFace?: string;
-  fontStyle?: string;
-  fontWeight?: number;
-  textDecoration?: TextDecoration;
+  fontSize: number;
+  lineHeight: number;
+  letterSpacing: number;
+  wordSpacing: number;
+  textTransform: TextTransform;
+  verticalAlign: VerticalAlign;
+  color: string;
+  typeFace: string;
+  fontStyle: string;
+  fontWeight: number;
+  textDecoration: TextDecoration;
 }
 
 interface RectangleLayoutParams {
