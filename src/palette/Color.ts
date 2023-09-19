@@ -7,4 +7,3 @@ export interface Color {
   updatedAt: number;
   status: PaletteColorStatus;
 }
-

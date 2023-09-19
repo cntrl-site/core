@@ -7,6 +7,7 @@ export { SectionHeightMode } from './article/enums/SectionHeightMode';
 export { ArticleItemSizingType } from './article/enums/Sizing';
 export { VerticalAlign } from './article/enums/VerticalAlign';
 export { TextTransform } from './article/enums/TextTransform';
+export { TextDecoration } from './article/enums/TextDecoration';
 export { AnchorSide } from './article/enums/AnchorSide';
 export { FontFileTypes } from './project/enums/FontFileTypes';
 export { AllowedTags } from './typePresets/enums/AllowedTags';
