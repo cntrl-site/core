@@ -50,7 +50,7 @@ export class Token<T extends TokenType = TokenType, V = any> {
     return Token.Ignore({ index: this.index, size: this.size });
   }
 
-  get end() { return this.index + this.size; }
+  end() { return this.index + this.size; }
 
-  get isIgnore() { return this.type === TOKEN_IGNORE; }
+  isIgnore() { return this.type === TOKEN_IGNORE; }
 }

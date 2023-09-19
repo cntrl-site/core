@@ -1,8 +1,8 @@
 export abstract class Result<V, E> {
   static Ok<V, E>(value: V) { return new Ok<V, E>(value); }
   static Err<V, E>(error: E) { return new Err<V, E>(error); }
-  get isOk() { return false; }
-  get isErr() { return false; }
+  isOk() { return false; }
+  isErr() { return false; }
   abstract unwrap(): V;
   abstract unwrapErr(): E;
   abstract map<R>(mapFn: (value: V) => R): Result<R,E>;
@@ -16,7 +16,7 @@ export class Ok<V, E> extends Result<V,E> {
     super();
     Object.freeze(this);
   }
-  get isOk() { return true; }
+  isOk() { return true; }
   unwrap() { return this.value; }
   unwrapErr(): E { throw this.value; }
   map<R>(mapFn: (value: V) => R) { return new Ok<R, E>(mapFn(this.value)); }
@@ -30,7 +30,7 @@ export class Err<V,E> extends Result<V,E> {
     super();
     Object.freeze(this);
   }
-  get isErr() { return true; }
+  isErr() { return true; }
   unwrap(): V { throw this.error; }
   unwrapErr(): E { return this.error; }
   // @ts-ignore
