@@ -128,6 +128,7 @@ interface RichTextLayoutParams {
   fontStyle: string;
   fontWeight: number;
   textDecoration: TextDecoration;
+  fontVariant: string;
 }
 
 interface RectangleLayoutParams {
