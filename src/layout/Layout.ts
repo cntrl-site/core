@@ -7,4 +7,5 @@ export interface Layout {
   exemplary: number;
   grid: LayoutGrid;
   id: string;
+  disabled?: boolean;
 }
