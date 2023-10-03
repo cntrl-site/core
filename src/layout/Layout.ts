@@ -8,4 +8,5 @@ export interface Layout {
   grid: LayoutGrid;
   id: string;
   disabled?: boolean;
+  locked?: boolean;
 }
