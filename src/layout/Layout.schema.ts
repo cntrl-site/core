@@ -1,6 +1,6 @@
-import { z } from 'zod';
-import { Layout } from './Layout';
+import { z, ZodType } from 'zod';
 import { LayoutGridSchema } from '../grid/Grid.schema';
+import { TLayout } from '../index';
 
 export const LayoutSchema = z.object({
   id: z.string(),
@@ -8,5 +8,7 @@ export const LayoutSchema = z.object({
   icon: z.string(),
   startsWith: z.number().nonnegative(),
   exemplary: z.number().positive(),
-  grid: LayoutGridSchema
-});
+  grid: LayoutGridSchema,
+  disabled: z.boolean(),
+  locked: z.boolean()
+}) satisfies ZodType<TLayout>;

@@ -7,6 +7,6 @@ export interface Layout {
   exemplary: number;
   grid: LayoutGrid;
   id: string;
-  disabled?: boolean;
-  locked?: boolean;
+  disabled: boolean;
+  locked: boolean;
 }
