@@ -6,7 +6,7 @@ export const GridSchema = z.object({
 });
 
 export const LayoutGridSchema: z.ZodSchema<LayoutGrid> = z.object({
-  columnWidth: z.number().positive(),
+  columnWidth: z.number().nonnegative(),
   gutterWidth: z.number().nonnegative(),
   beatHeight: z.number().nonnegative(),
   columnsAmount: z.number().positive(),
