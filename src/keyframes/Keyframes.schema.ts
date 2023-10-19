@@ -89,6 +89,35 @@ const BackdropBlurKeyframeSchema = KeyframesBaseSchema.extend({
   })
 });
 
+const TextColorKeyframeSchema = KeyframesBaseSchema.extend({
+  type: z.literal(KeyframeType.TextColor),
+  value: z.object({
+    color: z.string()
+  })
+});
+
+
+const FontSizeKeyframeSchema = KeyframesBaseSchema.extend({
+  type: z.literal(KeyframeType.FontSize),
+  value: z.object({
+    fontSize: z.number().nonnegative()
+  })
+});
+
+const LetterSpacingKeyframeSchema = KeyframesBaseSchema.extend({
+  type: z.literal(KeyframeType.LetterSpacing),
+  value: z.object({
+    letterSpacing: z.number().nonnegative()
+  })
+});
+
+const WordSpacingKeyframeSchema = KeyframesBaseSchema.extend({
+  type: z.literal(KeyframeType.WordSpacing),
+  value: z.object({
+    wordSpacing: z.number().nonnegative()
+  })
+});
+
 export const KeyframeSchema = z.discriminatedUnion('type', [
   DimensionsKeyframeSchema,
   PositionKeyframeSchema,
@@ -100,7 +129,11 @@ export const KeyframeSchema = z.discriminatedUnion('type', [
   OpacityKeyframeSchema,
   ScaleKeyframeSchema,
   BlurKeyframeSchema,
-  BackdropBlurKeyframeSchema
+  BackdropBlurKeyframeSchema,
+  TextColorKeyframeSchema,
+  FontSizeKeyframeSchema,
+  LetterSpacingKeyframeSchema,
+  WordSpacingKeyframeSchema
 ]);
 
 export const KeyframesSchema = z.array(KeyframeSchema);
