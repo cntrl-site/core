@@ -20,6 +20,9 @@ export enum KeyframeType {
   BorderColor = 'border-color',
   Opacity = 'opacity',
   Scale = 'scale',
+  TextColor = 'text-color',
+  LetterSpacing = 'letter-spacing',
+  WordSpacing = 'word-spacing',
   Blur = 'blur',
   BackdropBlur = 'backdrop-blur'
 }
@@ -36,6 +39,9 @@ export interface KeyframeValueMap {
   [KeyframeType.Scale]: ScaleValue;
   [KeyframeType.Blur]: BlurValue;
   [KeyframeType.BackdropBlur]: BackdropBlurValue;
+  [KeyframeType.TextColor]: TextColorValue;
+  [KeyframeType.LetterSpacing]: LetterSpacingValue;
+  [KeyframeType.WordSpacing]: WordSpacingValue;
 }
 
 interface DimensionsValue {
@@ -82,4 +88,16 @@ interface BlurValue {
 
 interface BackdropBlurValue {
   backdropBlur: number;
+}
+
+interface TextColorValue {
+  color: string;
+}
+
+interface LetterSpacingValue {
+  letterSpacing: number;
+}
+
+interface WordSpacingValue {
+  wordSpacing: number;
 }

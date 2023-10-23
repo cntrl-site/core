@@ -49,7 +49,11 @@ export const EmbedHoverStateParamsSchema = z.object({
     radius: getHoverParamsSchema(z.number())
   }).merge(ItemHoverStateBaseSchema) satisfies ZodType<EmbedHoverStateParams>;
 
-export const RichTextHoverStateParamsSchema = ItemHoverStateBaseSchema satisfies ZodType<RichTextHoverStateParams>;
+export const RichTextHoverStateParamsSchema = z.object({
+  color: getHoverParamsSchema(z.string()),
+  letterSpacing: getHoverParamsSchema(z.number()),
+  wordSpacing: getHoverParamsSchema(z.number())
+}).merge(ItemHoverStateBaseSchema) satisfies ZodType<RichTextHoverStateParams>;
 
 export const ItemHoverStateParamsSchema = z.union([
   EmbedHoverStateParamsSchema,
