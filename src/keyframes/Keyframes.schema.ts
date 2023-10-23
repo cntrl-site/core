@@ -107,14 +107,14 @@ const FontSizeKeyframeSchema = KeyframesBaseSchema.extend({
 const LetterSpacingKeyframeSchema = KeyframesBaseSchema.extend({
   type: z.literal(KeyframeType.LetterSpacing),
   value: z.object({
-    letterSpacing: z.number().nonnegative()
+    letterSpacing: z.number()
   })
 });
 
 const WordSpacingKeyframeSchema = KeyframesBaseSchema.extend({
   type: z.literal(KeyframeType.WordSpacing),
   value: z.object({
-    wordSpacing: z.number().nonnegative()
+    wordSpacing: z.number()
   })
 });
 

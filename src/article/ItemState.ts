@@ -42,7 +42,12 @@ export interface MediaHoverStateParams extends ItemHoversBaseMap {
   strokeColor?: HoverParams<string>;
 }
 
-export interface RichTextHoverStateParams extends ItemHoversBaseMap {}
+export interface RichTextHoverStateParams extends ItemHoversBaseMap {
+  color?: HoverParams<string>;
+  letterSpacing?: HoverParams<number>;
+  wordSpacing?: HoverParams<number>;
+  fontSize?: HoverParams<number>;
+}
 
 export interface RectangleHoverStateParams extends ItemHoversBaseMap {
   radius?: HoverParams<number>;
