@@ -1,5 +1,6 @@
 import { AnchorSide } from './enums/AnchorSide';
 import { ScaleAnchor } from './enums/ScaleAnchor';
+import { PositionType } from './enums/PositionType';
 
 export interface ItemArea {
   top: number;
@@ -8,6 +9,7 @@ export interface ItemArea {
   height: number;
   zIndex: number;
   angle: number;
+  positionType: PositionType;
   anchorSide?: AnchorSide;
   scale: number;
   scaleAnchor: ScaleAnchor;
